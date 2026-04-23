@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KIU — Courses &amp; Materials</title>
+  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <link rel="stylesheet" href="page.css" />
+</head>
+<body>
+<div class="layout">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar__logo">
+      <div class="sidebar__logo-icon"><img src="images/kiu-logo.png" alt="KIU logo" /></div>
+      <span class="sidebar__logo-text">KIU <span>LMS</span></span>
+    </div>
+    <nav class="sidebar__nav">
+      <div class="sidebar__section-label">Main</div>
+      <a href="dashboard.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>Dashboard</a>
+      <a href="courses.html" class="sidebar__link active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2zM22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>Courses &amp; Materials</a>
+      <a href="calendar.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Calendar &amp; Groups</a>
+      <a href="library.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>Library</a>
+      <div class="sidebar__section-label">Academic</div>
+      <a href="profile.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>GPA &amp; Grades</a>
+      <a href="appeal.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>Appeals</a>
+      <a href="notifications.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg>Notifications<span class="sidebar__badge">5</span></a>
+      <div class="sidebar__section-label">Account</div>
+      <a href="editprofile.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>My Profile</a>
+      <a href="index.html" class="sidebar__link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4M16 17l5-5-5-5M21 12H9"/></svg>Sign Out</a>
+    </nav>
+    <div class="sidebar__user">
+      <div class="sidebar__avatar">AK</div>
+      <div class="sidebar__user-info">
+        <div class="sidebar__user-name">Arman Kowalski</div>
+        <div class="sidebar__user-role">CS-21-A &bull; 3rd Year</div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <div class="main">
+    <header class="topbar">
+      <span class="topbar__title">Courses &amp; Materials</span>
+      <div class="topbar__search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" placeholder="Search courses, files…" />
+      </div>
+      <div class="topbar__actions">
+        <a href="notifications.html" class="topbar__icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9M13.73 21a2 2 0 01-3.46 0"/></svg><span class="notif-dot"></span></a>
+        <a href="editprofile.html" class="topbar__icon-btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></a>
+      </div>
+    </header>
+
+    <main class="page-content">
+
+      <!-- Two panel layout: course list left, detail right -->
+      <div class="courses-layout">
+
+        <!-- Course List -->
+        <div>
+          <div class="page-header"><h1>My Courses</h1><p>Spring 2025</p></div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+
+            <div style="background:white;border:1.5px solid var(--teal);border-radius:var(--radius);padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1e2d4a,#2e9e8e);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:white;letter-spacing:0.04em;flex-shrink:0;">CS</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:0.82rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Data Structures &amp; Algorithms</div>
+                  <div style="font-size:0.7rem;color:var(--muted);">CS301 &bull; Ivanova N.</div>
+                </div>
+                <span class="badge badge-teal" style="font-size:0.6rem;">Active</span>
+              </div>
+              <div class="progress-bar mt-8"><div class="progress-fill" style="width:68%"></div></div>
+            </div>
+
+            <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#3a4f72,#2e9e8e);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:white;flex-shrink:0;">MA</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:0.82rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Linear Algebra</div>
+                  <div style="font-size:0.7rem;color:var(--muted);">MATH205 &bull; Marchetti D.</div>
+                </div>
+              </div>
+              <div class="progress-bar mt-8"><div class="progress-fill" style="width:82%"></div></div>
+            </div>
+
+            <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#263555,#e8734a);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:white;flex-shrink:0;">OS</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:0.82rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Operating Systems</div>
+                  <div style="font-size:0.7rem;color:var(--muted);">CS215 &bull; Kim S.</div>
+                </div>
+                <span class="badge badge-warn" style="font-size:0.6rem;">Exam</span>
+              </div>
+              <div class="progress-bar mt-8"><div class="progress-fill accent" style="width:45%"></div></div>
+            </div>
+
+            <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#1e2d4a,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:white;flex-shrink:0;">DB</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:0.82rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">Database Systems</div>
+                  <div style="font-size:0.7rem;color:var(--muted);">CS320 &bull; Petrov A.</div>
+                </div>
+              </div>
+              <div class="progress-bar mt-8"><div class="progress-fill" style="width:55%"></div></div>
+            </div>
+
+            <div style="background:white;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px;">
+              <div style="display:flex;align-items:center;gap:10px;">
+                <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#3a4f72,#27a06e);display:flex;align-items:center;justify-content:center;font-size:0.65rem;font-weight:700;color:white;flex-shrink:0;">ET</div>
+                <div style="flex:1;min-width:0;">
+                  <div style="font-size:0.82rem;font-weight:700;color:var(--navy);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">CS Ethics</div>
+                  <div style="font-size:0.7rem;color:var(--muted);">CS101 &bull; Fernandez R.</div>
+                </div>
+              </div>
+              <div class="progress-bar mt-8"><div class="progress-fill" style="width:73%"></div></div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Course Detail -->
+        <div>
+
+          <!-- Course header -->
+          <div class="course-detail-header">
+            <div class="course-detail-header-content">
+              <div class="course-detail-code">CS301</div>
+              <h1 class="course-detail-title">Data Structures &amp; Algorithms</h1>
+              <div class="course-detail-meta">
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Prof. Natalia Ivanova</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Mon &amp; Thu 9:00–10:30</span>
+                <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>Room A-101</span>
+              </div>
+              <div class="course-detail-actions">
+                <button class="btn btn-primary btn-sm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                  Download All
+                </button>
+                <a href="appeal.html" class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+                  Appeal Grade
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Progress bar -->
+          <div class="card mb-20">
+            <div class="card-body" style="padding:16px 20px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+                <span style="font-size:0.82rem;font-weight:600;color:var(--navy);">Course Progress</span>
+                <span style="font-size:0.82rem;font-weight:700;color:var(--teal);">68% complete</span>
+              </div>
+              <div class="progress-bar" style="height:8px;"><div class="progress-fill" style="width:68%;"></div></div>
+              <div style="display:flex;justify-content:space-between;margin-top:8px;font-size:0.72rem;color:var(--muted);">
+                <span>14 / 18 topics covered</span>
+                <span>4 remaining</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tabs -->
+          <div class="tab-nav">
+            <button class="tab-btn active" type="button">Materials</button>
+            <button class="tab-btn" type="button">Assignments</button>
+            <button class="tab-btn" type="button">Grades</button>
+            <button class="tab-btn" type="button">Rate Course</button>
+          </div>
+
+          <!-- MATERIALS TAB -->
+          <div id="tab-materials">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+              <h3 style="font-size:0.95rem;font-weight:700;color:var(--navy);">Week 11 — Graph Algorithms</h3>
+              <div style="display:flex;gap:8px;">
+                <button class="btn btn-ghost btn-sm">All weeks</button>
+              </div>
+            </div>
+
+            <div class="material-item">
+              <div class="material-icon pdf"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg></div>
+              <div class="material-info">
+                <div class="material-name">Lecture 11 — BFS and DFS.pdf</div>
+                <div class="material-meta"><span>PDF &bull; 2.4 MB</span><span>Uploaded Apr 21</span></div>
+              </div>
+              <div class="material-actions">
+                <button class="btn btn-ghost btn-sm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                  View
+                </button>
+                <button class="btn btn-outline btn-sm">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="material-item">
+              <div class="material-icon ppt"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+              <div class="material-info">
+                <div class="material-name">Slides — Graph Traversal Algorithms.pptx</div>
+                <div class="material-meta"><span>PPTX &bull; 5.1 MB</span><span>Uploaded Apr 21</span></div>
+              </div>
+              <div class="material-actions">
+                <button class="btn btn-ghost btn-sm">View</button>
+                <button class="btn btn-outline btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+              </div>
+            </div>
+
+            <div class="material-item">
+              <div class="material-icon vid"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+              <div class="material-info">
+                <div class="material-name">Lecture Recording — Week 11.mp4</div>
+                <div class="material-meta"><span>Video &bull; 1h 28min</span><span>Uploaded Apr 22</span></div>
+              </div>
+              <div class="material-actions">
+                <button class="btn btn-ghost btn-sm">Watch</button>
+                <button class="btn btn-outline btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+              </div>
+            </div>
+
+            <div class="material-item">
+              <div class="material-icon zip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+              <div class="material-info">
+                <div class="material-name">Lab Starter Code — Graph Problems.zip</div>
+                <div class="material-meta"><span>ZIP &bull; 128 KB</span><span>Uploaded Apr 20</span></div>
+              </div>
+              <div class="material-actions">
+                <button class="btn btn-ghost btn-sm">Extract</button>
+                <button class="btn btn-outline btn-sm"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg></button>
+              </div>
+            </div>
+
+            <div class="material-item">
+              <div class="material-icon link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg></div>
+              <div class="material-info">
+                <div class="material-name">Additional Reading — Dijkstra's Algorithm (Wikipedia)</div>
+                <div class="material-meta"><span>External Link</span><span>Added Apr 19</span></div>
+              </div>
+              <div class="material-actions">
+                <button class="btn btn-ghost btn-sm">Open</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- HOMEWORK TAB -->
+          <div id="tab-homework" style="display:none;">
+
+            <div class="homework-card">
+              <div class="homework-card-header">
+                <h3>Homework #5 — Graph Shortest Paths</h3>
+                <span class="badge badge-danger">Due Apr 26</span>
+              </div>
+              <div class="homework-body">
+                <div class="homework-desc">
+                  Implement Dijkstra's algorithm and Bellman-Ford algorithm from scratch in Python. Test them on the provided test graphs and compare performance. Submit your code + a brief written analysis (300–500 words) as a PDF.
+                </div>
+                <div class="homework-meta-row">
+                  <div class="homework-meta-item">
+                    <span class="homework-meta-label">Deadline</span>
+                    <span class="homework-meta-val">April 26, 23:59</span>
+                  </div>
+                  <div class="homework-meta-item">
+                    <span class="homework-meta-label">Max Score</span>
+                    <span class="homework-meta-val">100 pts</span>
+                  </div>
+                  <div class="homework-meta-item">
+                    <span class="homework-meta-label">Submissions</span>
+                    <span class="homework-meta-val">1 attempt left</span>
+                  </div>
+                  <div class="homework-meta-item">
+                    <span class="homework-meta-label">Status</span>
+                    <span class="homework-meta-val" style="color:var(--warn);">Not submitted</span>
+                  </div>
+                </div>
+
+                <div class="upload-zone">
+                  <div class="upload-zone-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                  </div>
+                  <div class="upload-zone-title">Upload your submission</div>
+                  <div class="upload-zone-sub">Drag &amp; drop files here or <span style="color:var(--teal);font-weight:600;">browse</span> — PDF, ZIP, PY accepted &bull; Max 20 MB</div>
+                </div>
+
+                <div style="margin-top:14px;">
+                  <button class="btn btn-primary w-full" style="justify-content:center;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                    Submit Assignment
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="homework-card">
+              <div class="homework-card-header">
+                <h3>Homework #4 — Trees and Heaps</h3>
+                <span class="badge badge-success">Submitted &amp; Graded</span>
+              </div>
+              <div class="homework-body">
+                <div class="homework-desc">
+                  Implement a min-heap and a binary search tree with all standard operations.
+                </div>
+                <div class="uploaded-file-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                  <span class="uploaded-file-name">kowalski_hw4.zip</span>
+                  <span class="uploaded-file-size">84 KB</span>
+                  <span class="text-muted text-xs">Submitted Apr 14</span>
+                </div>
+                <div class="grade-display mt-12">
+                  <div class="grade-display-score">94</div>
+                  <div class="grade-display-info">
+                    <span class="grade-display-label">Score — out of 100</span>
+                    <span class="grade-display-comment">Excellent work. Minor edge cases missed in BST deletion.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- GRADES TAB -->
+          <div id="tab-grades" style="display:none;">
+            <div class="card">
+              <div class="table-wrap">
+                <table class="table">
+                  <thead><tr><th>Assignment</th><th>Type</th><th>Score</th><th>Weight</th><th>Date</th><th>Status</th></tr></thead>
+                  <tbody>
+                    <tr><td><strong>Midterm Exam</strong></td><td>Exam</td><td><strong style="color:var(--success)">82/100</strong></td><td>30%</td><td>Apr 10</td><td><span class="badge badge-success">Graded</span></td></tr>
+                    <tr><td><strong>HW #4 — Trees</strong></td><td>Homework</td><td><strong style="color:var(--success)">94/100</strong></td><td>10%</td><td>Apr 14</td><td><span class="badge badge-success">Graded</span></td></tr>
+                    <tr><td><strong>HW #3 — Sorting</strong></td><td>Homework</td><td><strong style="color:var(--success)">88/100</strong></td><td>10%</td><td>Apr 1</td><td><span class="badge badge-success">Graded</span></td></tr>
+                    <tr><td><strong>Quiz #2</strong></td><td>Quiz</td><td><strong style="color:var(--warn)">71/100</strong></td><td>5%</td><td>Mar 25</td><td><span class="badge badge-success">Graded</span></td></tr>
+                    <tr><td><strong>Lab Report #3</strong></td><td>Lab</td><td><strong style="color:var(--success)">91/100</strong></td><td>5%</td><td>Mar 20</td><td><span class="badge badge-success">Graded</span></td></tr>
+                    <tr><td><strong>HW #5 — Graphs</strong></td><td>Homework</td><td><span style="color:var(--muted)">—</span></td><td>10%</td><td>Apr 26</td><td><span class="badge badge-warn">Pending</span></td></tr>
+                    <tr><td><strong>Final Exam</strong></td><td>Exam</td><td><span style="color:var(--muted)">—</span></td><td>30%</td><td>May 20</td><td><span class="badge badge-muted">Upcoming</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div style="background:var(--off-white);border:1px solid var(--border);border-radius:var(--radius);padding:14px 18px;margin-top:14px;display:flex;align-items:center;gap:16px;">
+              <span style="font-size:0.85rem;color:var(--muted);">Current course grade (weighted avg.)</span>
+              <span style="font-family:var(--font-display);font-size:1.5rem;color:var(--navy);margin-left:auto;">84.6 / 100</span>
+            </div>
+          </div>
+
+          <!-- RATE COURSE TAB -->
+          <div id="tab-rating" style="display:none;">
+            <div class="rating-card">
+              <h3>Rate: Data Structures &amp; Algorithms</h3>
+              <div class="course-teacher">Prof. Natalia Ivanova &bull; CS301 &bull; Spring 2025</div>
+
+              <div class="rating-criteria">
+                <div class="rating-criterion">
+                  <div class="rating-criterion-label">Overall Quality</div>
+                  <div class="star-select">
+                    <input type="radio" name="r1" id="r1s1"><label for="r1s1">★</label>
+                    <input type="radio" name="r1" id="r1s2"><label for="r1s2">★</label>
+                    <input type="radio" name="r1" id="r1s3" checked><label for="r1s3">★</label>
+                    <input type="radio" name="r1" id="r1s4"><label for="r1s4">★</label>
+                    <input type="radio" name="r1" id="r1s5"><label for="r1s5">★</label>
+                  </div>
+                </div>
+                <div class="rating-criterion">
+                  <div class="rating-criterion-label">Teaching Clarity</div>
+                  <div class="star-select">
+                    <input type="radio" name="r2" id="r2s1"><label for="r2s1">★</label>
+                    <input type="radio" name="r2" id="r2s2"><label for="r2s2">★</label>
+                    <input type="radio" name="r2" id="r2s3"><label for="r2s3">★</label>
+                    <input type="radio" name="r2" id="r2s4" checked><label for="r2s4">★</label>
+                    <input type="radio" name="r2" id="r2s5"><label for="r2s5">★</label>
+                  </div>
+                </div>
+                <div class="rating-criterion">
+                  <div class="rating-criterion-label">Workload Fairness</div>
+                  <div class="star-select">
+                    <input type="radio" name="r3" id="r3s1"><label for="r3s1">★</label>
+                    <input type="radio" name="r3" id="r3s2"><label for="r3s2">★</label>
+                    <input type="radio" name="r3" id="r3s3" checked><label for="r3s3">★</label>
+                    <input type="radio" name="r3" id="r3s4"><label for="r3s4">★</label>
+                    <input type="radio" name="r3" id="r3s5"><label for="r3s5">★</label>
+                  </div>
+                </div>
+                <div class="rating-criterion">
+                  <div class="rating-criterion-label">Materials Quality</div>
+                  <div class="star-select">
+                    <input type="radio" name="r4" id="r4s1"><label for="r4s1">★</label>
+                    <input type="radio" name="r4" id="r4s2"><label for="r4s2">★</label>
+                    <input type="radio" name="r4" id="r4s3"><label for="r4s3">★</label>
+                    <input type="radio" name="r4" id="r4s4"><label for="r4s4">★</label>
+                    <input type="radio" name="r4" id="r4s5" checked><label for="r4s5">★</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group mb-16">
+                <label class="form-label">Written Feedback (optional)</label>
+                <textarea class="form-textarea" placeholder="Share your thoughts on the course…">Great course overall. The lab assignments are challenging and really help cement the theoretical concepts. Prof. Ivanova explains complex topics clearly. I'd appreciate more office hours during exam weeks.</textarea>
+              </div>
+
+              <button class="btn btn-primary">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                Submit Rating
+              </button>
+            </div>
+          </div>
+
+        </div><!-- end course detail -->
+      </div>
+
+    </main>
+  </div>
+</div>
+
+</body>
+</html>
