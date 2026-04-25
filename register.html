@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join — Georgian Culinary Map</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <div class="page-split">
+      <!-- ===== LEFT PANEL ===== -->
+      <aside class="panel-left">
+        <a href="index.html" class="brand-back">Back to Map</a>
+
+        <h1 class="panel-logo">Georgian<br /><span>Culinary</span><br />Map</h1>
+
+        <p class="panel-tagline">
+          Join our community of food explorers. Discover regional dishes,
+          collect recipes, and trace Georgia's ancient flavors.
+        </p>
+
+        <ul class="panel-perks">
+          <li class="perk-item">
+            <span class="perk-icon">✦</span>
+            <span>Save your favorite regional dishes and recipes</span>
+          </li>
+          <li class="perk-item">
+            <span class="perk-icon">✦</span>
+            <span>Track your culinary journey across all 12 regions</span>
+          </li>
+          <li class="perk-item">
+            <span class="perk-icon">✦</span>
+            <span>Receive seasonal dish recommendations by region</span>
+          </li>
+          <li class="perk-item">
+            <span class="perk-icon">✦</span>
+            <span>Connect with Georgian home cooks and chefs</span>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ===== RIGHT PANEL ===== -->
+      <main class="panel-right">
+        <div class="form-card">
+          <!-- Tab bar -->
+          <div class="tab-bar" role="tablist">
+            <a href="#register-panel" class="tab-btn" id="tab-register"
+              >Register</a
+            >
+            <a href="#login-panel" class="tab-btn" id="tab-login">Login</a>
+          </div>
+
+          <div class="form-panels">
+            <!-- ===== REGISTER PANEL ===== -->
+            <div class="form-panel" id="register-panel">
+              <h2 class="form-title">Create Account</h2>
+              <p class="form-subtitle">Join the Georgian culinary community</p>
+
+              <form action="#" method="post" novalidate>
+                <!-- Name row -->
+                <div class="field-row">
+                  <div class="field-group">
+                    <label for="reg-firstname">First Name</label>
+                    <input
+                      type="text"
+                      id="reg-firstname"
+                      name="firstname"
+                      placeholder="Nino"
+                      required
+                    />
+                  </div>
+                  <div class="field-group">
+                    <label for="reg-lastname">Last Name</label>
+                    <input
+                      type="text"
+                      id="reg-lastname"
+                      name="lastname"
+                      placeholder="Maisuradze"
+                      required
+                    />
+                  </div>
+                </div>
+
+                <!-- Email -->
+                <div class="field-group">
+                  <label for="reg-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="reg-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+
+                <!-- Password -->
+                <div class="field-group">
+                  <label for="reg-password">Password</label>
+                  <input
+                    type="password"
+                    id="reg-password"
+                    name="password"
+                    placeholder="Min. 8 characters"
+                    required
+                  />
+                </div>
+
+                <!-- Region of interest -->
+                <div class="field-group">
+                  <label for="reg-region">Home Region</label>
+                  <select id="reg-region" name="region" required>
+                    <option value="" disabled selected>
+                      Select your region
+                    </option>
+                    <option value="tbilisi">თბილისი — Tbilisi</option>
+                    <option value="kakheti">კახეთი — Kakheti</option>
+                    <option value="imereti">იმერეთი — Imereti</option>
+                    <option value="adjara">აჭარა — Adjara</option>
+                    <option value="samegrelo">სამეგრელო — Samegrelo</option>
+                    <option value="svaneti">სვანეთი — Svaneti</option>
+                    <option value="mtskheta">მცხეთა-მთიანეთი — Mtskheta</option>
+                    <option value="guria">გურია — Guria</option>
+                    <option value="racha">რაჭა — Racha</option>
+                    <option value="javakheti">
+                      სამცხე-ჯავახეთი — Javakheti
+                    </option>
+                    <option value="kartli">შიდა ქართლი — Shida Kartli</option>
+                    <option value="kvemo">ქვემო ქართლი — Kvemo Kartli</option>
+                    <option value="other">Outside Georgia</option>
+                  </select>
+                </div>
+
+                <!-- Dietary preference (radio) -->
+                <div class="field-group">
+                  <label>Dietary Preference</label>
+                  <div class="check-group">
+                    <label class="check-label">
+                      <input type="radio" name="diet" value="all" /> All foods
+                    </label>
+                    <label class="check-label">
+                      <input type="radio" name="diet" value="vegetarian" />
+                      Vegetarian
+                    </label>
+                    <label class="check-label">
+                      <input type="radio" name="diet" value="vegan" /> Vegan
+                    </label>
+                    <label class="check-label">
+                      <input type="radio" name="diet" value="halal" /> Halal
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Interests (checkbox badges) -->
+                <div class="field-group">
+                  <label>Culinary Interests</label>
+                  <div class="region-badges">
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-wine"
+                        name="interests"
+                        value="wine"
+                      />
+                      <label for="int-wine">🍷 Wine</label>
+                    </div>
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-bread"
+                        name="interests"
+                        value="bread"
+                      />
+                      <label for="int-bread">🫓 Bread</label>
+                    </div>
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-meat"
+                        name="interests"
+                        value="meat"
+                      />
+                      <label for="int-meat">🥩 Grilled Meats</label>
+                    </div>
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-dairy"
+                        name="interests"
+                        value="dairy"
+                      />
+                      <label for="int-dairy">🧀 Dairy</label>
+                    </div>
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-sweets"
+                        name="interests"
+                        value="sweets"
+                      />
+                      <label for="int-sweets">🍬 Sweets</label>
+                    </div>
+                    <div class="region-badge">
+                      <input
+                        type="checkbox"
+                        id="int-spices"
+                        name="interests"
+                        value="spices"
+                      />
+                      <label for="int-spices">🌶️ Spices</label>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Motivation / about -->
+                <div class="field-group">
+                  <label for="reg-motivation"
+                    >About You
+                    <span style="opacity: 0.6; font-weight: 400"
+                      >(optional)</span
+                    ></label
+                  >
+                  <textarea
+                    id="reg-motivation"
+                    name="motivation"
+                    placeholder="Tell us about your interest in Georgian cuisine…"
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Create Account</button>
+              </form>
+
+              <p class="switch-hint">
+                Already have an account? <a href="#login-panel">Sign in →</a>
+              </p>
+            </div>
+
+            <!-- ===== LOGIN PANEL ===== -->
+            <div class="form-panel" id="login-panel">
+              <h2 class="form-title">Welcome Back</h2>
+              <p class="form-subtitle">Sign in to your culinary account</p>
+
+              <form action="#" method="post" novalidate>
+                <div class="field-group">
+                  <label for="login-email">Email Address</label>
+                  <input
+                    type="email"
+                    id="login-email"
+                    name="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="field-group">
+                  <label for="login-password">Password</label>
+                  <input
+                    type="password"
+                    id="login-password"
+                    name="password"
+                    placeholder="Your password"
+                    required
+                  />
+                </div>
+
+                <a href="#" class="forgot-link">Forgot password?</a>
+
+                <!-- Remember me -->
+                <div class="field-group" style="margin-bottom: 1.5rem">
+                  <div class="check-group">
+                    <label class="check-label">
+                      <input type="checkbox" name="remember" value="yes" />
+                      Keep me signed in
+                    </label>
+                  </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Sign In</button>
+              </form>
+
+              <div class="form-divider">or</div>
+
+              <p class="switch-hint" style="margin-top: 0">
+                New to Georgian Culinary Map?
+                <a href="#register-panel">Create an account →</a>
+              </p>
+            </div>
+          </div>
+          <!-- /.form-panels -->
+        </div>
+        <!-- /.form-card -->
+      </main>
+    </div>
+    <!-- /.page-split -->
+  </body>
+</html>
