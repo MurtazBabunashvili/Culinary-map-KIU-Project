@@ -1,0 +1,877 @@
+/* ============================================================
+   GEORGIAN CULINARY MAP — style.css
+   ============================================================ */
+
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Nunito:wght@300;400;600;700&display=swap');
+
+   /* ---- CSS VARIABLES ---- */
+   :root {
+     --maroon-deep:   #3A0A0A;
+     --maroon:        #5C1A1A;
+     --maroon-mid:    #7B2828;
+     --maroon-light:  #922F2F;
+     --red-accent:    #8B2635;
+   
+     --tan-dark:      #8B6B4A;
+     --tan:           #BFA07A;
+     --tan-light:     #D4BC9A;
+     --cream-dark:    #E0CEAE;
+     --cream:         #F0E5D0;
+     --cream-light:   #FAF4EC;
+     --cream-white:   #FDFAF6;
+   
+     --text-dark:     #280606;
+     --text-mid:      #3D1515;
+     --text-body:     #4A2C2C;
+     --text-muted:    #7A5A4A;
+   
+     --gold:          #C9A84C;
+     --gold-light:    #E2C97E;
+     --white:         #FFFFFF;
+   
+     --ff-display:    'Playfair Display', Georgia, serif;
+     --ff-body:       'Crimson Pro', Georgia, serif;
+     --ff-ui:         'Nunito', system-ui, sans-serif;
+   
+     --shadow-sm:     0 2px 10px rgba(58, 10, 10, 0.10);
+     --shadow-md:     0 4px 22px rgba(58, 10, 10, 0.18);
+     --shadow-lg:     0 8px 44px rgba(58, 10, 10, 0.26);
+     --radius:        8px;
+     --ease:          all 0.3s ease;
+   }
+   
+   /* ---- RESET & BASE ---- */
+   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+   html  { scroll-behavior: smooth; }
+   body  {
+     font-family: var(--ff-body);
+     background-color: var(--cream);
+     color: var(--text-body);
+     line-height: 1.6;
+     overflow-x: hidden;
+   }
+   img   { display: block; width: 100%; height: 100%; object-fit: cover; }
+   a     { text-decoration: none; color: inherit; }
+   
+   /* ============================================================
+      SITE HEADER
+      ============================================================ */
+   .site-header {
+     background-color: var(--maroon-deep);
+     position: sticky;
+     top: 0;
+     z-index: 1000;
+     border-bottom: 1.5px solid var(--maroon-mid);
+   }
+   
+   .header-inner {
+     max-width: 1440px;
+     margin: 0 auto;
+     padding: 0 2.5rem;
+     height: 66px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+   
+   /* Logo */
+   .logo {
+     display: flex;
+     align-items: center;
+     gap: 0.7rem;
+   }
+   
+   .logo-emblem {
+  width: 58px;
+  height: 58px;
+     flex-shrink: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+   }
+   
+.logo-emblem img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+   
+   .logo-text {
+     display: flex;
+     flex-direction: column;
+     line-height: 1.15;
+   }
+   
+   .logo-line1 {
+     font-family: var(--ff-display);
+     font-size: 0.92rem;
+     font-weight: 700;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+     letter-spacing: 0.04em;
+   }
+   
+   .logo-line2 {
+     font-family: var(--ff-display);
+     font-size: 0.92rem;
+     font-weight: 400;
+  color: #f4d7b8;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+     letter-spacing: 0.04em;
+   }
+   
+   /* Nav */
+   .main-nav {
+     display: flex;
+     align-items: center;
+     gap: 2rem;
+   }
+   
+   .nav-link {
+     font-family: var(--ff-ui);
+     font-size: 0.92rem;
+     font-weight: 400;
+     color: var(--cream-dark);
+     letter-spacing: 0.03em;
+     position: relative;
+     padding-bottom: 3px;
+     transition: color 0.25s;
+   }
+   
+   .nav-link::after {
+     content: '';
+     position: absolute;
+     bottom: 0;
+     left: 0;
+     width: 0;
+     height: 1.5px;
+     background: var(--tan-light);
+     transition: width 0.3s ease;
+   }
+   
+   .nav-link:hover { color: var(--white); }
+   .nav-link:hover::after,
+   .nav-link.active::after { width: 100%; }
+   .nav-link.active { color: var(--white); font-weight: 700; }
+   
+   .header-ornament { opacity: 0.75; }
+   .header-ornament svg { display: block; }
+   
+   /* ============================================================
+      HERO SECTION
+      ============================================================ */
+   .hero {
+     position: relative;
+  min-height: 340px;
+     overflow: hidden;
+   }
+   
+   .hero-bg {
+     position: absolute;
+     inset: 0;
+     background-image: url('images/main/background.png');
+     background-size: cover;
+     background-position: center 30%;
+     background-repeat: no-repeat;
+   }
+   
+   .hero-overlay {
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(
+       105deg,
+       rgba(58, 10, 10, 0.72) 0%,
+       rgba(58, 10, 10, 0.48) 38%,
+       rgba(58, 10, 10, 0.20) 65%,
+       transparent 100%
+     );
+   }
+
+/* ============================================================
+   GEORGIA MAP SECTION
+   ============================================================ */
+.map-section {
+  padding: 2rem 1.2rem 1rem;
+  background: linear-gradient(180deg, #f8f4ee 0%, #f2ebe2 100%);
+}
+
+.map-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.map-wrapper--georgia {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 1rem 1.2rem;
+  align-items: start;
+  width: 100%;
+  background: linear-gradient(135deg, #f9f3ea 0%, #efe4d5 100%);
+  border: 1px solid rgba(191, 160, 122, 0.45);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 10px 30px rgba(45, 20, 12, 0.08);
+}
+
+.regions-of-georgia {
+  width: min(100%, 720px);
+  height: auto;
+  display: block;
+  grid-column: 1;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(191, 160, 122, 0.35);
+  border-radius: 12px;
+  padding: 0.6rem;
+  margin: 0 auto;
+}
+
+.regions-of-georgia path {
+  fill: #cfae8d;
+  stroke: #f7f0e5;
+  stroke-width: 5px;
+  transition: fill 0.2s ease, transform 0.2s ease;
+}
+
+.regions-of-georgia a:hover path,
+.regions-of-georgia a:focus path {
+  fill: #8c2338;
+}
+
+.region-hover-panel {
+  grid-column: 2;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(191, 160, 122, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 10px 26px rgba(40, 16, 10, 0.12);
+  padding: 1rem;
+  min-height: 500px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(10px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+
+.region-preview {
+  display: none;
+}
+
+.region-preview-default {
+  display: block;
+}
+
+.region-preview h3 {
+  margin: 0 0 0.45rem;
+  color: #5c1a1a;
+}
+
+.region-preview h4 {
+  margin: 0.65rem 0 0.35rem;
+  color: #7a1c2e;
+}
+
+.region-preview p {
+  margin: 0;
+  color: #4a352b;
+  line-height: 1.5;
+}
+
+.region-preview img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+  border: 1px solid rgba(191, 160, 122, 0.35);
+}
+
+.map-wrapper--georgia:has(.regions-of-georgia path:hover) .region-hover-panel,
+.map-wrapper--georgia:has(.regions-of-georgia path:focus) .region-hover-panel {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0);
+}
+
+.map-wrapper--georgia:has(.svaneti:hover) .region-preview[data-region="svaneti"],
+.map-wrapper--georgia:has(.samegrelo:hover) .region-preview[data-region="samegrelo"],
+.map-wrapper--georgia:has(.kakheti:hover) .region-preview[data-region="kakheti"],
+.map-wrapper--georgia:has(.imereti:hover) .region-preview[data-region="imereti"],
+.map-wrapper--georgia:has(.adjara:hover) .region-preview[data-region="adjara"],
+.map-wrapper--georgia:has(.mtskheta:hover) .region-preview[data-region="mtskheta"],
+.map-wrapper--georgia:has(.shida-qartli:hover) .region-preview[data-region="shida-qartli"],
+.map-wrapper--georgia:has(.javakheti:hover) .region-preview[data-region="javakheti"],
+.map-wrapper--georgia:has(.qvemo-qartli:hover) .region-preview[data-region="qvemo-qartli"],
+.map-wrapper--georgia:has(.guria:hover) .region-preview[data-region="guria"],
+.map-wrapper--georgia:has(.racha:hover) .region-preview[data-region="racha"],
+.map-wrapper--georgia:has(.tbilisi:hover) .region-preview[data-region="tbilisi"],
+.map-wrapper--georgia:has(.abkhazia:hover) .region-preview[data-region="abkhazia"],
+.map-wrapper--georgia:has(.lechkhumi:hover) .region-preview[data-region="lechkhumi"] {
+  display: block;
+}
+
+.map-wrapper--georgia:has(.regions-of-georgia path:hover) .region-preview-default {
+  display: none;
+}
+   
+   .hero-content {
+     position: relative;
+     z-index: 2;
+  max-width: 1680px;
+     margin: 0 auto;
+  padding: 2.2rem 1.4rem 2rem;
+   }
+   
+   /* Hero text */
+   .hero-text {
+     flex: 0 0 auto;
+     max-width: 400px;
+     padding-top: 1.2rem;
+   }
+   
+   .hero-title {
+     font-family: var(--ff-display);
+     font-size: clamp(3rem, 5.5vw, 5rem);
+     font-weight: 700;
+     color: var(--white);
+     line-height: 1.05;
+     letter-spacing: -0.01em;
+     margin-bottom: 1.1rem;
+     text-shadow: 0 3px 24px rgba(0,0,0,0.45);
+   }
+   
+   .hero-tagline {
+     font-family: var(--ff-body);
+     font-size: 1.08rem;
+     font-style: italic;
+     color: rgba(255,255,255,0.88);
+     line-height: 1.65;
+   }
+   
+   .hero-divider {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+     margin-top: 1.6rem;
+   }
+   
+   .divider-line {
+     display: block;
+     width: 50px;
+     height: 1.5px;
+     background: var(--tan);
+   }
+   
+   .divider-diamond {
+     color: var(--tan);
+     font-size: 0.6rem;
+   }
+   
+   /* ============================================================
+      MAP BOX
+      ============================================================ */
+   .map-box {
+  width: 100%;
+   }
+   
+   .map-legend {
+     flex: 0 0 150px;
+     padding-right: 1.2rem;
+     border-right: 1px solid var(--tan);
+   }
+   
+   .map-legend h3 {
+     font-family: var(--ff-display);
+     font-size: 1.25rem;
+     font-weight: 700;
+     color: var(--maroon);
+     margin-bottom: 0.35rem;
+   }
+   
+   .legend-rule {
+     width: 38px;
+     height: 2px;
+     background: var(--tan-dark);
+     margin: 0.4rem 0 0.7rem;
+   }
+   
+   .map-legend p {
+     font-size: 0.88rem;
+     color: var(--text-muted);
+     line-height: 1.55;
+   }
+   
+   /* Map SVG wrapper */
+   .map-wrapper {
+  width: min(1680px, calc(100vw - 2.8rem));
+  margin: 0 auto;
+  position: relative;
+   }
+   
+   .georgia-map {
+     width: 100%;
+  height: min(80vh, 980px);
+     display: block;
+  object-fit: contain;
+  object-position: center top;
+   }
+   
+   /* Region shapes */
+   .rshape {
+     fill: var(--tan-light);
+     stroke: var(--cream-white);
+     stroke-width: 1.6;
+     cursor: pointer;
+     transition: fill 0.22s ease, filter 0.22s ease;
+   }
+   
+   .map-region:hover .rshape {
+     fill: var(--tan-dark);
+     filter: drop-shadow(0 2px 8px rgba(58, 10, 10, 0.32));
+   }
+   
+   /* Active region (Imereti default) */
+   .map-active .rshape,
+   .r-imereti {
+     fill: var(--maroon-mid) !important;
+   }
+   
+   .map-region:hover.map-active .rshape {
+     fill: var(--maroon) !important;
+   }
+   
+   /* Region labels */
+   .rlabel {
+     font-family: var(--ff-body);
+     font-size: 10px;
+     fill: var(--text-dark);
+     text-anchor: middle;
+     pointer-events: none;
+     font-weight: 400;
+   }
+   .rlabel.bold  { fill: var(--white); font-weight: 600; font-size: 11.5px; }
+   .rlabel.small { font-size: 8.5px; }
+   .rlabel.tiny  { font-size: 7.5px; }
+   
+   /* ---- MAP TOOLTIP ---- */
+   .map-tooltip {
+     position: absolute;
+     background: var(--white);
+     border: 1px solid var(--tan);
+     border-radius: 6px;
+     padding: 0.8rem 1rem 0.75rem;
+     width: 195px;
+     box-shadow: var(--shadow-md);
+     opacity: 0;
+     pointer-events: none;
+     transition: opacity 0.2s ease;
+     z-index: 20;
+   }
+   
+   .map-tooltip.visible {
+     opacity: 1;
+     pointer-events: auto;
+   }
+   
+   .tooltip-dot {
+     width: 8px;
+     height: 8px;
+     border-radius: 50%;
+     background: var(--maroon);
+     margin-bottom: 0.4rem;
+   }
+   
+   .tooltip-name {
+     font-family: var(--ff-display);
+     font-size: 1rem;
+     font-weight: 700;
+     color: var(--maroon);
+     margin-bottom: 0.35rem;
+     line-height: 1.2;
+   }
+   
+   .tooltip-desc {
+     font-family: var(--ff-body);
+     font-size: 0.83rem;
+     color: var(--text-body);
+     line-height: 1.45;
+     margin-bottom: 0.5rem;
+   }
+   
+   .tooltip-cta {
+     display: inline-block;
+     font-family: var(--ff-ui);
+     font-size: 0.78rem;
+     font-weight: 700;
+     color: var(--maroon);
+     letter-spacing: 0.03em;
+     transition: color 0.2s;
+   }
+   .tooltip-cta:hover { color: var(--red-accent); text-decoration: underline; }
+   
+   /* ============================================================
+      SECTION TITLES (shared)
+      ============================================================ */
+   .section-title {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 1.2rem;
+     padding: 2.8rem 0 2.2rem;
+   }
+   
+   .section-title h2 {
+     font-family: var(--ff-display);
+     font-size: 1.75rem;
+     font-weight: 700;
+     color: var(--maroon);
+     letter-spacing: 0.02em;
+   }
+   
+   .ornament-wing { display: flex; align-items: center; }
+   .ornament-wing.flipped { transform: scaleX(-1); }
+   
+   /* ============================================================
+      DISCOVER REGIONS
+      ============================================================ */
+   .discover-section {
+     background: var(--cream);
+     padding: 0 2.5rem 3rem;
+   }
+   
+   .regions-grid {
+     max-width: 1440px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: repeat(6, 1fr);
+     gap: 1.1rem;
+   }
+   
+   /* Region card */
+   .rcard {
+     background: var(--cream-white);
+     border-radius: var(--radius);
+     overflow: hidden;
+     border: 1px solid var(--cream-dark);
+     box-shadow: var(--shadow-sm);
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   
+   .rcard:hover {
+     transform: translateY(-5px);
+     box-shadow: var(--shadow-md);
+   }
+   
+   .rcard-img {
+     height: 132px;
+     overflow: hidden;
+     background: var(--cream-dark);
+   }
+   
+   .rcard-img img {
+     transition: transform 0.55s ease;
+   }
+   .rcard:hover .rcard-img img { transform: scale(1.07); }
+   
+   .rcard-body {
+     padding: 0.95rem 1rem 1rem;
+   }
+   
+   .rcard-body h3 {
+     font-family: var(--ff-display);
+     font-size: 0.98rem;
+     font-weight: 700;
+     color: var(--maroon);
+     margin-bottom: 0.35rem;
+   }
+   
+   .rcard-body p {
+     font-size: 0.82rem;
+     color: var(--text-muted);
+     line-height: 1.45;
+     margin-bottom: 0.55rem;
+   }
+   
+   .explore-btn {
+     display: inline-block;
+     font-family: var(--ff-ui);
+     font-size: 0.8rem;
+     font-weight: 700;
+     color: var(--maroon);
+     letter-spacing: 0.03em;
+     transition: color 0.2s;
+   }
+   .explore-btn:hover { color: var(--red-accent); }
+   
+   /* ============================================================
+      COMPARE SECTION
+      ============================================================ */
+   .compare-section {
+     background: var(--cream-light);
+     padding: 0 2.5rem 3.5rem;
+   }
+   
+   .table-wrap {
+     max-width: 1440px;
+     margin: 0 auto;
+     overflow-x: auto;
+     border-radius: var(--radius);
+     box-shadow: var(--shadow-md);
+     border: 1px solid var(--cream-dark);
+   }
+   
+   .compare-table {
+     width: 100%;
+     border-collapse: collapse;
+     min-width: 860px;
+   }
+   
+   /* Table head */
+   .compare-table thead tr {
+     background: var(--maroon-deep);
+   }
+   
+   .compare-table th {
+     padding: 0.85rem 1.2rem;
+     text-align: left;
+     font-family: var(--ff-ui);
+     font-size: 0.82rem;
+     font-weight: 700;
+     color: var(--white);
+     letter-spacing: 0.06em;
+     text-transform: uppercase;
+     white-space: nowrap;
+   }
+   
+   /* Table body */
+   .compare-table tbody tr {
+     background: var(--white);
+     border-bottom: 1px solid var(--cream-dark);
+     transition: background 0.18s;
+   }
+   
+   .compare-table tbody tr:nth-child(even) {
+     background: var(--cream-light);
+   }
+   
+   .compare-table tbody tr:hover {
+     background: var(--cream);
+   }
+   
+   .compare-table td {
+     padding: 0.78rem 1.2rem;
+     font-family: var(--ff-body);
+     font-size: 0.9rem;
+     color: var(--text-body);
+     vertical-align: middle;
+   }
+   
+   /* Region cell with badge */
+   .cell-region {
+     display: flex !important;
+     align-items: center;
+     gap: 0.7rem;
+   }
+   
+   .cell-region strong {
+     font-family: var(--ff-display);
+     font-weight: 600;
+     color: var(--maroon);
+     font-size: 0.92rem;
+   }
+   
+   /* Decorative region badges */
+   .r-badge {
+     display: inline-block;
+     width: 22px;
+     height: 22px;
+     border-radius: 50%;
+     border: 2px solid;
+     flex-shrink: 0;
+     position: relative;
+   }
+   
+   .r-badge::after {
+     content: '';
+     position: absolute;
+     inset: 3px;
+     border-radius: 50%;
+   }
+   
+   .r-badge-kakheti  { border-color: #7B2020; background: rgba(123,32,32,0.12); }
+   .r-badge-kakheti::after  { background: #7B2020; opacity: 0.6; }
+   
+   .r-badge-imereti  { border-color: #8B2628; background: rgba(139,38,40,0.12); }
+   .r-badge-imereti::after  { background: #8B2628; opacity: 0.6; }
+   
+   .r-badge-adjara   { border-color: #5A8A6A; background: rgba(90,138,106,0.12); }
+   .r-badge-adjara::after   { background: #5A8A6A; opacity: 0.6; }
+   
+   .r-badge-svaneti  { border-color: #4A6A8A; background: rgba(74,106,138,0.12); }
+   .r-badge-svaneti::after  { background: #4A6A8A; opacity: 0.6; }
+   
+   .r-badge-racha    { border-color: #7A6A3A; background: rgba(122,106,58,0.12); }
+   .r-badge-racha::after    { background: #7A6A3A; opacity: 0.6; }
+   
+   .r-badge-samtskhe { border-color: #6A4A7A; background: rgba(106,74,122,0.12); }
+   .r-badge-samtskhe::after { background: #6A4A7A; opacity: 0.6; }
+   
+   /* ============================================================
+      FOOTER
+      ============================================================ */
+   .site-footer {
+     background: var(--maroon-deep);
+     border-top: 2px solid var(--maroon-mid);
+     padding: 2rem 2.5rem;
+   }
+   
+   .footer-inner {
+     max-width: 1440px;
+     margin: 0 auto;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+   }
+   
+   .footer-brand {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 0.3rem;
+   }
+   
+   .footer-logo-row {
+     display: flex;
+     align-items: center;
+     gap: 0.6rem;
+   }
+   
+   .footer-ornament svg { display: block; }
+   
+   .footer-logo-text {
+     font-family: var(--ff-display);
+     font-size: 1.05rem;
+     font-weight: 600;
+     color: var(--white);
+     letter-spacing: 0.02em;
+   }
+   
+   .footer-tagline {
+     font-family: var(--ff-body);
+     font-size: 0.88rem;
+     font-style: italic;
+     color: var(--tan-light);
+     letter-spacing: 0.01em;
+   }
+   
+   /* Social icons */
+   .footer-social {
+     display: flex;
+     gap: 0.7rem;
+   }
+   
+   .social-btn {
+     width: 38px;
+     height: 38px;
+     border: 1.5px solid var(--tan);
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     color: var(--tan-light);
+     transition: var(--ease);
+   }
+   
+   .social-btn svg { display: block; }
+   
+   .social-btn:hover {
+     background: var(--tan);
+     color: var(--maroon-deep);
+     border-color: var(--tan);
+   }
+   
+   /* ============================================================
+      RESPONSIVE
+      ============================================================ */
+   @media (max-width: 1280px) {
+     .regions-grid {
+       grid-template-columns: repeat(3, 1fr);
+     }
+   }
+   
+   @media (max-width: 1024px) {
+     .map-box {
+       width: 100%;
+     }
+   
+     .main-nav {
+       gap: 1.2rem;
+     }
+   }
+   
+   @media (max-width: 860px) {
+     .regions-grid {
+       grid-template-columns: repeat(2, 1fr);
+     }
+   
+     .main-nav {
+       display: none;
+     }
+   }
+   
+   @media (max-width: 560px) {
+  .hero {
+    min-height: 260px;
+  }
+
+  .hero-content {
+    padding-top: 1.1rem;
+    padding-bottom: 1.1rem;
+  }
+
+  .map-wrapper {
+    width: calc(100vw - 1.2rem);
+  }
+
+  .georgia-map {
+    height: auto;
+  }
+
+     .regions-grid {
+       grid-template-columns: 1fr;
+     }
+   
+     .hero-title {
+       font-size: 2.8rem;
+     }
+   
+     .footer-inner {
+       flex-direction: column;
+       gap: 1.2rem;
+       text-align: center;
+     }
+   
+     .header-inner {
+       padding: 0 1.2rem;
+     }
+   
+     .hero-content,
+     .discover-section,
+     .compare-section {
+       padding-left: 1.2rem;
+       padding-right: 1.2rem;
+     }
+   }
+
+  @media (max-width: 980px) {
+    .map-wrapper--georgia {
+      grid-template-columns: 1fr;
+      padding: 0.8rem;
+    }
+
+    .region-hover-panel {
+      grid-column: 1;
+      min-height: auto;
+      margin-top: 0.75rem;
+    }
+  }
