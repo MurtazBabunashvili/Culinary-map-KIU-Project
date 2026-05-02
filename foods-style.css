@@ -266,46 +266,6 @@
    }
    
    /* ============================================================
-      SEARCH BAR
-      ============================================================ */
-   .search-wrapper {
-     background: var(--cream-white);
-     padding: 1.6rem 2.5rem 0;
-     border-bottom: none;
-   }
-   .search-inner {
-     max-width: 1440px;
-     margin: 0 auto;
-     position: relative;
-     max-width: 560px;
-   }
-   .search-input {
-     width: 100%;
-     padding: .85rem 1.2rem .85rem 3rem;
-     border: 1.5px solid var(--cream-dark);
-     border-radius: 40px;
-     font-family: var(--ff-body);
-     font-size: 1rem;
-     color: var(--text-dark);
-     background: var(--cream-light);
-     outline: none;
-     transition: border-color .25s, box-shadow .25s;
-   }
-   .search-input:focus {
-     border-color: var(--maroon-mid);
-     box-shadow: 0 0 0 3px rgba(92,26,26,.1);
-     background: var(--white);
-   }
-   .search-input::placeholder { color: var(--text-muted); font-style: italic; }
-   .search-icon {
-     position: absolute;
-     left: 1.1rem; top: 50%;
-     transform: translateY(-50%);
-     color: var(--text-muted);
-     pointer-events: none;
-   }
-   
-   /* ============================================================
       CSS-ONLY FILTER SYSTEM
       ============================================================ */
    .filter-radio { display: none; }
@@ -794,11 +754,6 @@
    .social-btn:hover { background: var(--tan); color: var(--maroon-deep); }
    
    /* ============================================================
-      JS SEARCH HIDE
-      ============================================================ */
-   .fcard.hidden { display: none !important; }
-   
-   /* ============================================================
       RESPONSIVE
       ============================================================ */
    @media (max-width: 1280px) {
@@ -815,8 +770,7 @@
      .foods-hero { min-height: 65vh; }
      .hstat { padding: 0 1.2rem; }
      .footer-inner { flex-direction: column; text-align: center; }
-     .results-bar { padding: 0 1.2rem; }
-     .search-wrapper { padding: 1.2rem 1.2rem 0; }
+    .results-bar { padding: 0 1.2rem; }
      .food-feature-banner { padding: 0 1.2rem; }
    }
    @media (max-width: 420px) {

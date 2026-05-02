@@ -657,6 +657,43 @@
      color: rgba(255,255,255,.4);
      font-style: normal;
    }
+  
+  /* ============================================================
+     MAP EMBED (small + centered)
+     ============================================================ */
+  .map-embed-section {
+    background: var(--cream-light);
+    padding: 2.2rem 2.5rem 3rem;
+  }
+  .map-embed-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+  }
+  .map-embed-title {
+    font-family: var(--ff-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: var(--maroon);
+    letter-spacing: .02em;
+  }
+  .map-embed-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid var(--cream-dark);
+    box-shadow: var(--shadow-md);
+  }
+  .map-embed-inner iframe {
+    display: block;
+    width: 100%;
+    height: 340px;
+    filter: saturate(0.9) contrast(1.03);
+  }
    
    /* ============================================================
       FOOTER
@@ -717,6 +754,10 @@
      .rest-grid { grid-template-columns: 1fr; gap: 1.2rem; padding: 0 1.2rem; }
      .filter-bar { flex-wrap: wrap; gap: .35rem; justify-content: flex-start; padding: .7rem 1rem; }
      .filter-btn__icon { display: none; }
+    .map-embed-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .map-embed-header { gap: .6rem; }
+    .map-embed-title { font-size: 1.15rem; }
+    .map-embed-inner iframe { height: 260px; }
      .rest-hero { min-height: 65vh; }
      .hstat { padding: 0 1.2rem; }
      .footer-inner { flex-direction: column; text-align: center; }

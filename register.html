@@ -274,17 +274,32 @@
       <!-- Register Form -->
       <div class="form-card form-card--register" id="register">
 
-        <!-- Full Name -->
-        <div class="field">
-          <label class="field__label" for="fullname">სრული სახელი</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                <circle cx="12" cy="7" r="4"/>
-              </svg>
-            </span>
-            <input class="field__input" type="text" id="fullname" placeholder="შეიყვანე სრული სახელი" />
+        <!-- First + Last Name side by side -->
+        <div class="field-row">
+          <div class="field">
+            <label class="field__label" for="firstname">სახელი</label>
+            <div class="field__input-wrap">
+              <span class="field__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </span>
+              <input class="field__input" type="text" id="firstname" placeholder="სახელი" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="lastname">გვარი</label>
+            <div class="field__input-wrap">
+              <span class="field__icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              </span>
+              <input class="field__input" type="text" id="lastname" placeholder="გვარი" />
+            </div>
           </div>
         </div>
 
@@ -299,6 +314,36 @@
               </svg>
             </span>
             <input class="field__input" type="email" id="email" placeholder="შეიყვანე ელფოსტა" />
+          </div>
+        </div>
+
+        <!-- Select: Favorite Region — add this AFTER the email field -->
+        <div class="field">
+          <label class="field__label" for="region">საყვარელი კულინარიული რეგიონი</label>
+          <div class="field__input-wrap">
+            <span class="field__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
+                <line x1="9" y1="3" x2="9" y2="18"/>
+                <line x1="15" y1="6" x2="15" y2="21"/>
+              </svg>
+            </span>
+            <select class="field__input field__select" id="region">
+              <option value="" disabled selected>აირჩიე რეგიონი...</option>
+              <option value="kakheti">კახეთი</option>
+              <option value="imereti">იმერეთი</option>
+              <option value="samegrelo">სამეგრელო</option>
+              <option value="adjara">აჭარა</option>
+              <option value="svaneti">სვანეთი</option>
+              <option value="racha">რაჭა-ლეჩხუმი</option>
+              <option value="guria">გურია</option>
+              <option value="mtskheta">მცხეთა-მთიანეთი</option>
+              <option value="shida">შიდა ქართლი</option>
+              <option value="kvemo">ქვემო ქართლი</option>
+              <option value="samtskhe">სამცხე-ჯავახეთი</option>
+              <option value="tbilisi">თბილისი</option>
+              <option value="abkhazia">აფხაზეთი</option>
+            </select>
           </div>
         </div>
 
@@ -340,6 +385,17 @@
               </svg>
             </button>
           </div>
+        </div>
+
+        <!-- Textarea — add BEFORE the terms checkbox -->
+        <div class="field">
+          <label class="field__label" for="motivation">რატომ გაინტერესებთ ქართული სამზარეულო?</label>
+          <textarea
+            class="field__input field__textarea"
+            id="motivation"
+            placeholder="მოგვიყევი შენი კულინარიული ინტერესების შესახებ..."
+            rows="3"
+          ></textarea>
         </div>
 
         <!-- Terms checkbox -->
