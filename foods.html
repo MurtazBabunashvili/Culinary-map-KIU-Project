@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ტრადიციული კერძები — ქართული კულინარიული გიდი</title>
+  <link rel="stylesheet" href="foods-style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════
+       HEADER
+  ═══════════════════════════ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-emblem">
+          <img src="images/main/logo.png" alt="საიტის ლოგო" />
+        </div>
+        <div class="logo-text">
+          <span class="logo-line1">ქართული</span>
+          <span class="logo-line2">კულინარიული გიდი</span>
+        </div>
+      </a>
+      <nav class="main-nav">
+        <a href="index.html#regions"    class="nav-link">რეგიონები</a>
+        <a href="foods.html"            class="nav-link active">კერძები</a>
+        <a href="restaurants.html"      class="nav-link">რესტორნები</a>
+        <a href="register.html#login"   class="nav-link">ავტორიზაცია</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- ═══════════════════════════
+       HERO
+  ═══════════════════════════ -->
+  <section class="foods-hero">
+    <div class="foods-hero__bg"></div>
+    <div class="foods-hero__overlay"></div>
+    <div class="foods-hero__content">
+      <p class="foods-hero__eyebrow">
+        <span class="eyebrow-dot"></span>
+        კულინარიული კლასიკა · Georgian Cuisine
+        <span class="eyebrow-dot"></span>
+      </p>
+      <h1 class="foods-hero__title">
+        ტრადიციული
+      </h1>
+      <br>
+      <p class="foods-hero__tagline">
+        კერძები, რომლებიც ქართულ სამზარეულოს<br/>
+        მსოფლიოში ერთ-ერთ საუკეთესოდ აქცევს
+      </p>
+      <div class="foods-hero__stats">
+        <div class="hstat">
+          <span class="hstat__n">20</span>
+          <span class="hstat__l">კერძი</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat__n">14</span>
+          <span class="hstat__l">რეგიონი</span>
+        </div>
+        <div class="hstat-sep"></div>
+        <div class="hstat">
+          <span class="hstat__n">8,000+</span>
+          <span class="hstat__l">წლის ისტორია</span>
+        </div>
+      </div>
+    </div>
+    <div class="foods-hero__scroll-hint">
+      <span></span><span></span><span></span>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════
+       SEARCH
+  ═══════════════════════════ -->
+  <div class="search-wrapper">
+    <div class="search-inner">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+      </svg>
+      <input
+        class="search-input"
+        type="text"
+        id="food-search"
+        placeholder="მოძებნე კერძი... (მაგ. ხინკალი, ლობიო)"
+        autocomplete="off"
+      />
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════
+       CSS-ONLY FILTER SYSTEM
+  ═══════════════════════════ -->
+  <input class="filter-radio" type="radio" id="f-all"       name="food-filter" checked />
+  <input class="filter-radio" type="radio" id="f-puri"      name="food-filter" />
+  <input class="filter-radio" type="radio" id="f-khorci"    name="food-filter" />
+  <input class="filter-radio" type="radio" id="f-bostneuli" name="food-filter" />
+  <input class="filter-radio" type="radio" id="f-desert"    name="food-filter" />
+  <input class="filter-radio" type="radio" id="f-soup"      name="food-filter" />
+
+  <div class="filter-wrapper">
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+      <label for="f-all" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--all"></span>
+        ყველა
+        <span class="filter-btn__count">20</span>
+      </label>
+      <label for="f-puri" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--puri"></span>
+        პური &amp; ცომეული
+        <span class="filter-btn__count">6</span>
+      </label>
+      <label for="f-khorci" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--khorci"></span>
+        ხორცეული
+        <span class="filter-btn__count">7</span>
+      </label>
+      <label for="f-bostneuli" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--bostneuli"></span>
+        ბოსტნეული
+        <span class="filter-btn__count">3</span>
+      </label>
+      <label for="f-soup" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--soup"></span>
+        ჩაშუშული &amp; წვნიანი
+        <span class="filter-btn__count">2</span>
+      </label>
+      <label for="f-desert" class="filter-btn">
+        <span class="filter-btn__dot filter-btn__dot--desert"></span>
+        დესერტი
+        <span class="filter-btn__count">2</span>
+      </label>
+    </div>
+
+    <!-- Results label -->
+    <div class="results-bar">
+      <span class="results-bar__line"></span>
+      <span class="results-bar__text" id="results-label">ნაჩვენებია ყველა კერძი</span>
+      <span class="results-bar__line"></span>
+    </div>
+
+    <!-- ═══════════════════════════
+         FOOD GRID
+    ═══════════════════════════ -->
+    <div class="food-grid" id="food-grid">
+
+      <!-- 1. ხაჭაპური -->
+      <article class="fcard" data-cat="puri" data-search="ხაჭაპური khachapuri იმერეთი პური ყველი">
+        <div class="fcard__img">
+          <img src="images/foods/khachapuri.webp" alt="ხაჭაპური" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">იმერეთი · ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ხაჭაპური</h3>
+          <p class="fcard__sub">Khachapuri — ყველიანი პური</p>
+          <p class="fcard__desc">
+            ქართული სამზარეულოს ყველაზე სახელგანთქმული კერძი — ახალი ყველით
+            გაჟღენთილი, ოქროსფრად გამომცხვარი პური. თითოეული რეგიონი
+            თავის უნიკალურ ვარიანტს ადგენს.
+          </p>
+          <div class="fcard__tags">
+            <span>სულგუნი</span><span>ხომლი</span><span>კვერცხი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            იმერეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 2. ხინკალი -->
+      <article class="fcard" data-cat="khorci" data-search="ხინკალი khinkali მთიანეთი ხორცი ცომი">
+        <div class="fcard__img">
+          <img src="images/foods/khinkali.jpg" alt="ხინკალი" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">მცხეთა-მთიანეთი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ხინკალი</h3>
+          <p class="fcard__sub">Khinkali — ქართული პელმენი</p>
+          <p class="fcard__desc">
+            მსოფლიოში ერთ-ერთი ყველაზე ცნობადი ქართული კერძი. ხელნაკეთი
+            ცომის ყდაში კარგად სანელებლებიანი ხორცი და ბულიონი —
+            ყინულოვანი მთის სამზარეულოს სიამაყე.
+          </p>
+          <div class="fcard__tags">
+            <span>საქონლის ხორცი</span><span>ცომი</span><span>კინძა</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="on"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            მთიანეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 3. მწვადი -->
+      <article class="fcard" data-cat="khorci" data-search="მწვადი mtsvadi გრილი კახეთი ხორცი">
+        <div class="fcard__img">
+          <img src="images/foods/mtsvadi.jpg" alt="მწვადი" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">მწვადი</h3>
+          <p class="fcard__sub">Mtsvadi — ქართული შაშლიკი</p>
+          <p class="fcard__desc">
+            ვაზის ყლორტზე ან ნახშირზე შემწვარი ხორცი — ქართული
+            სუფრის უუცვლელი ნაწილი. ახალი ბოსტნეულის სალათთან
+            და ტონის პურთან ერთად — ბედნიერების განსახიერება.
+          </p>
+          <div class="fcard__tags">
+            <span>ღორი / ძროხა</span><span>ნახშირი</span><span>ვაზი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="off"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            კახეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 4. ნიგვზიანი ბადრიჯანი -->
+      <article class="fcard" data-cat="bostneuli" data-search="ბადრიჯანი badrijani nigvzit კაკალი ბოსტნეული">
+        <div class="fcard__img">
+          <img src="images/foods/nigvziani-badrijani.jpg" alt="ნიგვზიანი ბადრიჯანი" loading="lazy" />
+          <span class="fcard__cat bostneuli">ბოსტნეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ნიგვზიანი ბადრიჯანი</h3>
+          <p class="fcard__sub">Badrijani Nigvzit — ბადრიჯანი კაკლით</p>
+          <p class="fcard__desc">
+            შემწვარი ბადრიჯნის ნაჭრები, სავსე კაკლის, ნიორისა და
+            სანელებლების პასტით — ქართული სუფრის ყველაზე
+            ელეგანტური და სახელგანთქმული გასამასპინძლებელი.
+          </p>
+          <div class="fcard__tags">
+            <span>ბადრიჯანი</span><span>კაკალი</span><span>ნიორი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 5. ლობიო -->
+      <article class="fcard" data-cat="bostneuli" data-search="ლობიო lobio ლობი ბოსტნეული იმერეთი">
+        <div class="fcard__img">
+          <img src="images/foods/lobio.webp" alt="ლობიო" loading="lazy" />
+          <span class="fcard__cat bostneuli">ბოსტნეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ლობიო</h3>
+          <p class="fcard__sub">Lobio — ქართული ლობი</p>
+          <p class="fcard__desc">
+            ქართული სამზარეულოს მარადიული კლასიკა — ნელ ცეცხლზე
+            მოხარშული ლობი, სანელებლებითა და სუნელ-ბალახით
+            გაჯერებული. კეციში ან ქვევრში გამომცხვარი — სულის საჭმელი.
+          </p>
+          <div class="fcard__tags">
+            <span>ლობი</span><span>კინძა</span><span>ნიორი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="off"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 6. ელარჯი -->
+      <article class="fcard" data-cat="puri" data-search="ელარჯი elarji სამეგრელო ყველი ღომი">
+        <div class="fcard__img">
+          <img src="images/regions/samegrelo/elarji.jpg" alt="ელარჯი" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">სამეგრელო</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ელარჯი</h3>
+          <p class="fcard__sub">Elarji — ყველიანი ღომი</p>
+          <p class="fcard__desc">
+            სიმინდის ფქვილი და სულგუნის ყველი ნელ ცეცხლზე
+            ერთმანეთს ეხვევიან, ვიდრე ელასტიური, ძაფიანი მასა
+            არ შეიქმნება. სამეგრელოს ყველაზე სასიამოვნო კომფორტ-საჭმელი.
+          </p>
+          <div class="fcard__tags">
+            <span>სიმინდის ფქვილი</span><span>სულგუნი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            სამეგრელო
+          </div>
+        </div>
+      </article>
+
+      <!-- 7. საცივი -->
+      <article class="fcard" data-cat="khorci" data-search="საცივი satsivi კაკლი ქათამი სოუსი">
+        <div class="fcard__img">
+          <img src="images/foods/satsivi.jpg" alt="საცივი" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">საცივი</h3>
+          <p class="fcard__sub">Satsivi — ქათამი კაკლის სოუსში</p>
+          <p class="fcard__desc">
+            ნაყინი კაკლის სოუსი, გაჟღენთილი სანელებლებით — ქათამი
+            ამ ნაზ, ნოყიერ გარსში ყინდება. ქართული სუფრის
+            ყველაზე ფეერიული, ზამთრის კლასიკური კერძი.
+          </p>
+          <div class="fcard__tags">
+            <span>ქათამი</span><span>კაკალი</span><span>სანელებლები</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="on"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 8. ფხალი -->
+      <article class="fcard" data-cat="bostneuli" data-search="ფხალი pkhali კაკალი ბოსტნეული სპანახი">
+        <div class="fcard__img">
+          <img src="images/foods/pkhali.jpg" alt="ფხალი" loading="lazy" />
+          <span class="fcard__cat bostneuli">ბოსტნეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ფხალი</h3>
+          <p class="fcard__sub">Pkhali — კაკლის ბოსტნეული</p>
+          <p class="fcard__desc">
+            სპანახი, ჭარხლის ფოთოლი ან კომბოსტო — კაკლის, ნიორისა
+            და სანელებლების პასტით შეზელილი, მარგალიტის ფორმის
+            ბურთულებად ყალიბდება. ვიზუალური და გემოვნური სიამოვნება.
+          </p>
+          <div class="fcard__tags">
+            <span>სპანახი</span><span>კაკალი</span><span>ნიორი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 9. ჩახოხბილი -->
+      <article class="fcard" data-cat="khorci" data-search="ჩახოხბილი chakhokhbili ქათამი პომიდორი ხორცი">
+        <div class="fcard__img">
+          <img src="images/foods/chakhokhbili.jpg" alt="ჩახოხბილი" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ჩახოხბილი</h3>
+          <p class="fcard__sub">Chakhokhbili — ქათმის ჩაშუშული</p>
+          <p class="fcard__desc">
+            ქათამი ახალ პომიდორში, ბალახოვანი მწვანილით და
+            სანელებლებით ნელ ცეცხლზე ხარშება. ტომატის
+            სიმჟავე და კინძის სიმწვანე განუმეორებელ არომატს ქმნის.
+          </p>
+          <div class="fcard__tags">
+            <span>ქათამი</span><span>პომიდორი</span><span>კინძა</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 10. ჩაშუშული -->
+      <article class="fcard" data-cat="soup" data-search="ჩაშუშული chashushuli კახეთი ძროხა ჩაშუში">
+        <div class="fcard__img">
+          <img src="images/foods/chashushuli.webp" alt="ჩაშუშული" loading="lazy" />
+          <span class="fcard__cat soup">ჩაშუშული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">კახეთი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ჩაშუშული</h3>
+          <p class="fcard__sub">Chashushuli — ძროხის ხორცის ჩაშუში</p>
+          <p class="fcard__desc">
+            კახური ჩაშუშული — ახალი ძროხის ხორცი, პომიდვრის,
+            ბულგარული წიწაკისა და სანელებლების ნელ ხარშვაში.
+            ღვინო და ხმელი სუნელი — კახეთის სუფრის სული.
+          </p>
+          <div class="fcard__tags">
+            <span>ძროხის ხორცი</span><span>პომიდორი</span><span>ღვინო</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            კახეთი
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /food-grid first 10 -->
+
+    <!-- ═══════════════════════════
+         FEATURE BANNER (between rows)
+    ═══════════════════════════ -->
+    <div class="food-feature-banner">
+      <div class="food-feature-banner__inner">
+        <div>
+          <p class="banner-eyebrow">კულინარიული ფილოსოფია</p>
+          <h2 class="banner-heading">
+            ქართული სუფრა —
+            <em>ერის ერთობა ერთ მაგიდაზე</em>
+          </h2>
+          <p class="banner-text">
+            ქართული სამზარეულო <strong>8,000 წელზე მეტი</strong> ისტორიის
+            მქონე კულტურაა. თითოეული კერძი — ამბავი, ტრადიცია, ოჯახის
+            სიამაყე. <strong>ქვევრი, თონე, კეცი</strong> — ქართული
+            კულინარიის წმინდა სიმბოლოებია, რომელთა გარეშე სუფრა
+            სუფრა არ არის.
+          </p>
+        </div>
+        <div class="banner-stats">
+          <div class="bstat">
+            <div class="bstat__n">8,000+</div>
+            <div class="bstat__l">წლის კულინარია</div>
+          </div>
+          <div class="bstat">
+            <div class="bstat__n">UNESCO</div>
+            <div class="bstat__l">ქვევრის ტრადიცია</div>
+          </div>
+          <div class="bstat">
+            <div class="bstat__n">500+</div>
+            <div class="bstat__l">ტრადიციული კერძი</div>
+          </div>
+          <div class="bstat">
+            <div class="bstat__n">14</div>
+            <div class="bstat__l">განსხვავებული რეგიონი</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Second 10 foods -->
+    <div class="food-grid" id="food-grid-2" style="margin-top:1.8rem;">
+
+      <!-- 11. ჩურჩხელა -->
+      <article class="fcard" data-cat="desert" data-search="ჩურჩხელა churchkhela კახეთი დესერტი კაკალი ყურძენი">
+        <div class="fcard__img">
+          <img src="images/foods/churchkhela.jpg" alt="ჩურჩხელა" loading="lazy" />
+          <span class="fcard__cat desert">დესერტი</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">კახეთი · ყველა</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ჩურჩხელა</h3>
+          <p class="fcard__sub">Churchkhela — ქართული სიტკბო</p>
+          <p class="fcard__desc">
+            ყურძნის წვენის სქელ ნარევში ჩაყვინთული კაკლები —
+            კახეთის ბაზრობების სიმბოლო. ბუნებრივი, ხდომილი,
+            ენერგიით სავსე — ქართული „შოკოლადი".
+          </p>
+          <div class="fcard__tags">
+            <span>ყურძენი</span><span>კაკალი</span><span>ბუნებრივი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            კახეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 12. კუბდარი -->
+      <article class="fcard" data-cat="puri" data-search="კუბდარი kubdari სვანეთი ხორცი პური სვანური">
+        <div class="fcard__img">
+          <img src="images/foods/kubdari.jpg" alt="კუბდარი" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">სვანეთი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">კუბდარი</h3>
+          <p class="fcard__sub">Kubdari — სვანური ხორციანი პური</p>
+          <p class="fcard__desc">
+            სვანეთის ლეგენდარული ხორციანი პური — ახალი სანელებლებიანი
+            ხორცი ნაღები ცომში, ტაფაზე გამომცხვარი. სვანური
+            მარილი ამ კერძს განუმეორებელ ხასიათს ანიჭებს.
+          </p>
+          <div class="fcard__tags">
+            <span>ღორი/ხბო</span><span>სვანური მარილი</span><span>ცომი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="on"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            სვანეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 13. გებჟალია -->
+      <article class="fcard" data-cat="puri" data-search="გებჟალია gebzhalia სამეგრელო სულგუნი რულეტი">
+        <div class="fcard__img">
+          <img src="images/regions/samegrelo/gebzhalia.jpg" alt="გებჟალია" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">სამეგრელო</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">გებჟალია</h3>
+          <p class="fcard__sub">Gebzhalia — სულგუნის რულეტი</p>
+          <p class="fcard__desc">
+            ახალი სულგუნი თხელ ლიფებად იშლება, შეივსება პიტნისა
+            და ნიორის ნარევით, შემდეგ სოუსში ცურავს. სამეგრელოს
+            კულინარიული ელეგანტურობის განსახიერება.
+          </p>
+          <div class="fcard__tags">
+            <span>სულგუნი</span><span>პიტნა</span><span>ნიორი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="on"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            სამეგრელო
+          </div>
+        </div>
+      </article>
+
+      <!-- 14. კუპატი -->
+      <article class="fcard" data-cat="khorci" data-search="კუპატი kupati სამეგრელო კოლბასა ღორი">
+        <div class="fcard__img">
+          <img src="images/regions/samegrelo/kupati.jpg" alt="კუპატი" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">სამეგრელო</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">კუპატი</h3>
+          <p class="fcard__sub">Kupati — ქართული კოლბასი</p>
+          <p class="fcard__desc">
+            სამეგრელოს ხელნაკეთი ღორის კოლბასი — სანელებლებით,
+            ნიორით, ბარბარისით გაჯერებული ხორცი.
+            ნახშირზე ან გრილზე შემწვარი — ყველა ქართული სუფრის ვარსკვლავი.
+          </p>
+          <div class="fcard__tags">
+            <span>ღორი</span><span>სანელებლები</span><span>ბარბარისი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            სამეგრელო
+          </div>
+        </div>
+      </article>
+
+      <!-- 15. ოჯახური -->
+      <article class="fcard" data-cat="khorci" data-search="ოჯახური ojakhuri კარტოფილი ღორი ხორცი">
+        <div class="fcard__img">
+          <img src="images/foods/ojakhuri.jpg" alt="ოჯახური" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ოჯახური</h3>
+          <p class="fcard__sub">Ojakhuri — ოჯახური კერძი</p>
+          <p class="fcard__desc">
+            სახელი ყველაფერს ამბობს — „ოჯახური" ოჯახის კერძია.
+            ღორის ხორცი და კარტოფილი ბოსტნეულთან ერთად
+            სქელ ტაფაში შეიბრაწება — მარტივი, ნოყიერი, სიყვარულით სავსე.
+          </p>
+          <div class="fcard__tags">
+            <span>ღორი</span><span>კარტოფილი</span><span>ხახვი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="off"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 16. ლობიანი -->
+      <article class="fcard" data-cat="puri" data-search="ლობიანი lobiani რაჭა პური ლობი">
+        <div class="fcard__img">
+          <img src="images/foods/lobiani.jpg" alt="ლობიანი" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">რაჭა</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ლობიანი</h3>
+          <p class="fcard__sub">Lobiani — ლობიანი პური</p>
+          <p class="fcard__desc">
+            რაჭული ავთენტური ლობიანი პური — სანელებლებიანი ლობი
+            ნაღები ცომში, ტაფაზე ან ტონეში გამომცხვარი.
+            მარხვის სეზონის ყველაზე საყვარელი კერძი.
+          </p>
+          <div class="fcard__tags">
+            <span>ლობი</span><span>ცომი</span><span>სანელებლები</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            რაჭა
+          </div>
+        </div>
+      </article>
+
+      <!-- 17. ჭვიშტარი -->
+      <article class="fcard" data-cat="puri" data-search="ჭვიშტარი chvishtari სამეგრელო სიმინდი პური">
+        <div class="fcard__img">
+          <img src="images/regions/samegrelo/chvishtari.webp" alt="ჭვიშტარი" loading="lazy" />
+          <span class="fcard__cat puri">პური</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">სამეგრელო</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ჭვიშტარი</h3>
+          <p class="fcard__sub">Chvishtari — სიმინდის პური</p>
+          <p class="fcard__desc">
+            სიმინდის ფქვილი სულგუნის ყველით — ყოველდღიური
+            სამეგრელოური პური, რომელიც ყოველ გამთენიაზე
+            ოჯახის სუფრაზე ათბობს სახლს.
+          </p>
+          <div class="fcard__tags">
+            <span>სიმინდი</span><span>სულგუნი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="off"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            სამეგრელო
+          </div>
+        </div>
+      </article>
+
+      <!-- 18. ტოლმა -->
+      <article class="fcard" data-cat="khorci" data-search="ტოლმა tolma ყურძნის ფოთოლი ხორცი ბრინჯი">
+        <div class="fcard__img">
+          <img src="images/foods/tolma.jpg" alt="ტოლმა" loading="lazy" />
+          <span class="fcard__cat khorci">ხორცეული</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">კახეთი · ყველა</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ტოლმა</h3>
+          <p class="fcard__sub">Tolma — ყურძნის ფოთოლში</p>
+          <p class="fcard__desc">
+            ყურძნის ფოთოლში გახვეული ხორცი და ბრინჯი —
+            ქართული სამზარეულოს ძვირფასი, პრეციზიული კერძი.
+            ნიახურის სოუსი ამ მინიატურულ ნახელავს ასრულებს.
+          </p>
+          <div class="fcard__tags">
+            <span>ხბო</span><span>ბრინჯი</span><span>ყურძნის ფოთოლი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="on"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            კახეთი
+          </div>
+        </div>
+      </article>
+
+      <!-- 19. გოზინაყი -->
+      <article class="fcard" data-cat="desert" data-search="გოზინაყი gozinaki კახეთი დესერტი კაკალი თაფლი">
+        <div class="fcard__img">
+          <img src="images/foods/gozinakhi.jpg" alt="გოზინაყი" loading="lazy" />
+          <span class="fcard__cat desert">დესერტი</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">კახეთი · ყველა</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">გოზინაყი</h3>
+          <p class="fcard__sub">Gozinaki — თაფლ-კაკლის ტკბილეული</p>
+          <p class="fcard__desc">
+            ახალი წლის სიმბოლო — კაკალი ან სეზამი თაფლის სქელ
+            ნარევში შეზელილი და გამყარებული. ოქროსფერი, მტვრიანი,
+            ყოველ ბავშვობის შობის კარის ჟღერადობა.
+          </p>
+          <div class="fcard__tags">
+            <span>კაკალი</span><span>თაფლი</span><span>სეზამი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+      <!-- 20. ხარჩო -->
+      <article class="fcard" data-cat="soup" data-search="ხარჩო kharcho წვნიანი ბრინჯი კაკალი ხორცი">
+        <div class="fcard__img">
+          <img src="images/foods/kharcho.jpg" alt="ხარჩო" loading="lazy" />
+          <span class="fcard__cat soup">წვნიანი</span>
+          <div class="fcard__hover-info">
+            <span class="fcard__region-chip">ყველა რეგიონი</span>
+          </div>
+        </div>
+        <div class="fcard__body">
+          <h3 class="fcard__name">ხარჩო</h3>
+          <p class="fcard__sub">Kharcho — ქართული სქელი წვნიანი</p>
+          <p class="fcard__desc">
+            ქართული სამზარეულოს ყველაზე ცნობილი წვნიანი —
+            ძროხის ხორცი, ბრინჯი, კაკალი, ტყემლის სოუსი და
+            სანელებლების ნარევი ერთ ნოყიერ, სურნელოვან ნახარშში.
+          </p>
+          <div class="fcard__tags">
+            <span>ძროხა</span><span>ბრინჯი</span><span>ტყემლი</span>
+          </div>
+        </div>
+        <div class="fcard__footer">
+          <div class="fcard__diff">
+            <span class="on"></span><span class="on"></span><span class="off"></span>
+          </div>
+          <span class="fcard__diff-label">სიმარტივე</span>
+          <div class="fcard__origin">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            ყველა
+          </div>
+        </div>
+      </article>
+
+    </div><!-- /food-grid second 10 -->
+
+  </div><!-- /filter-wrapper -->
+
+
+  <!-- ═══════════════════════════
+       QUOTE BAND
+  ═══════════════════════════ -->
+  <section class="quote-band">
+    <div class="quote-band__inner">
+      <div class="quote-band__ornament">✦</div>
+      <blockquote class="quote-band__text">
+        „ქართული სუფრა — ეს სამყაროა, სადაც ყოველი ნაჭერი
+        პური სიყვარულის ამბავია, ყოველი ჭიქა ღვინო — ლოცვა."
+      </blockquote>
+      <cite class="quote-band__cite">— ქართული სტუმართმოყვარეობა</cite>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════
+       FOOTER
+  ═══════════════════════════ -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <span style="color:#BFA07A;">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 L14 9 L21 9 L16 14 L18 21 L12 17 L6 21 L8 14 L3 9 L10 9 Z" fill="none" stroke="#BFA07A" stroke-width="1.2"/></svg>
+          </span>
+          <span class="footer-logo-text">საქართველოს კულინარიული რუკა</span>
+          <span style="color:#BFA07A;">
+            <svg viewBox="0 0 24 24" width="18" height="18"><path d="M12 2 L14 9 L21 9 L16 14 L18 21 L12 17 L6 21 L8 14 L3 9 L10 9 Z" fill="none" stroke="#BFA07A" stroke-width="1.2"/></svg>
+          </span>
+        </div>
+        <p class="footer-tagline">დააგემოვნე ისტორიული საჭმელები. შეიცანი საქართველო.</p>
+      </div>
+      <div class="footer-social">
+        <a href="#" class="social-btn" aria-label="ფეისბუქი">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="ინსტაგრამი">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <a href="#" class="social-btn" aria-label="ლოკაცია">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
