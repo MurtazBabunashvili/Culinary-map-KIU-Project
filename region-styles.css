@@ -1127,18 +1127,6 @@
      background: var(--tan);
      color: var(--maroon-deep);
    }
-   .footer-nav {
-     display: flex;
-     gap: 1.5rem;
-     flex-wrap: wrap;
-   }
-   .footer-nav a {
-     font-family: var(--ff-ui);
-     font-size: 0.82rem;
-     color: rgba(255,255,255,.55);
-     transition: color .25s;
-   }
-   .footer-nav a:hover { color: var(--tan-light); }
    
    /* ============================================================
       SCROLL REVEAL ANIMATIONS
