@@ -987,6 +987,297 @@
      color: var(--maroon-deep);
      border-color: var(--tan);
    }
+
+   /* ============================================================
+   RESTAURANTS PREVIEW SECTION
+   ============================================================ */
+.rest-preview-section {
+  background: var(--cream-light);
+  padding: 0 2.5rem 4rem;
+}
+
+.rest-preview-subtitle {
+  text-align: center;
+  font-family: var(--ff-body);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 2.8rem;
+}
+
+.rest-preview-grid {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* Restaurant Preview Card */
+.rpcard {
+  background: var(--cream-white);
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--cream-dark);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  transition: transform .45s var(--ease-spring), box-shadow .45s ease;
+}
+
+.rpcard:hover {
+  transform: translateY(-7px) scale(1.01);
+  box-shadow: var(--shadow-lg);
+}
+
+.rpcard__img {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  background: var(--maroon-deep);
+  flex-shrink: 0;
+}
+
+.rpcard__img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.rpcard:hover .rpcard__img img { transform: scale(1.07); }
+
+.rpcard__city {
+  position: absolute;
+  top: .85rem; left: .85rem;
+  font-family: var(--ff-ui);
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  padding: .28rem .72rem;
+  border-radius: 20px;
+  color: var(--white);
+}
+
+.rpcard__city.tbilisi   { background: rgba(92,26,26,.88);  border: 1px solid rgba(255,255,255,.2); }
+.rpcard__city.samegrelo { background: rgba(45,106,91,.88); border: 1px solid rgba(255,255,255,.2); }
+.rpcard__city.kakheti   { background: rgba(122,79,26,.88); border: 1px solid rgba(255,255,255,.2); }
+
+.rpcard__body {
+  padding: 1.25rem 1.4rem 1.4rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rpcard__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
+
+.rpcard__stars {
+  font-size: .8rem;
+  color: var(--gold);
+  letter-spacing: .04em;
+}
+
+.rpcard__price {
+  font-family: var(--ff-ui);
+  font-size: .78rem;
+  font-weight: 700;
+  color: var(--maroon);
+  letter-spacing: .06em;
+}
+
+.rpcard__name {
+  font-family: var(--ff-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--maroon);
+  line-height: 1.2;
+  margin-bottom: .18rem;
+}
+
+.rpcard__type {
+  font-family: var(--ff-body);
+  font-style: italic;
+  font-size: .84rem;
+  color: var(--tan-dark);
+  font-weight: 600;
+  margin-bottom: .65rem;
+}
+
+.rpcard__desc {
+  font-size: .88rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  flex: 1;
+}
+
+/* "See More" CTA */
+.rest-preview-cta {
+  text-align: center;
+  margin-top: 2.8rem;
+}
+
+.rest-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .6rem;
+  padding: .85rem 2.2rem;
+  background: var(--maroon);
+  color: var(--gold-light);
+  font-family: var(--ff-ui);
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: .04em;
+  border-radius: 8px;
+  border: 2px solid var(--maroon);
+  transition: background .25s, transform .2s, box-shadow .25s;
+  box-shadow: 0 4px 18px rgba(58,10,10,.2);
+}
+
+.rest-preview-btn:hover {
+  background: var(--maroon-light);
+  border-color: var(--maroon-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(58,10,10,.3);
+}
+
+/* ============================================================
+   REGISTER CTA SECTION
+   ============================================================ */
+.reg-cta-section {
+  position: relative;
+  background: var(--maroon-deep);
+  padding: 5.5rem 2.5rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.reg-cta-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 80% at 20% 50%, rgba(146,47,47,.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 80% 50%, rgba(201,168,76,.06) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.reg-cta-section::before,
+.reg-cta-section::after {
+  content: '✦';
+  position: absolute;
+  font-size: 9rem;
+  color: rgba(255,255,255,.025);
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+.reg-cta-section::before { left: 3%; }
+.reg-cta-section::after  { right: 3%; }
+
+.reg-cta-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.reg-cta-ornament {
+  font-size: .75rem;
+  color: var(--tan);
+  letter-spacing: .35em;
+  margin-bottom: 1.6rem;
+  opacity: .7;
+}
+
+.reg-cta-title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1.2rem;
+  letter-spacing: -.01em;
+}
+
+.reg-cta-text {
+  font-family: var(--ff-body);
+  font-size: 1.08rem;
+  color: rgba(255,255,255,.72);
+  line-height: 1.8;
+  margin-bottom: 2.2rem;
+}
+
+.reg-cta-text strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.reg-cta-features {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.reg-cta-feat {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  font-family: var(--ff-ui);
+  font-size: .85rem;
+  font-weight: 600;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .02em;
+}
+
+.reg-cta-feat svg {
+  flex-shrink: 0;
+  color: var(--tan);
+  opacity: .85;
+}
+
+.reg-cta-btn {
+  display: inline-block;
+  padding: 1rem 2.8rem;
+  background: var(--gold);
+  color: var(--maroon-deep);
+  font-family: var(--ff-ui);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  border-radius: 8px;
+  transition: background .25s, transform .2s, box-shadow .25s;
+  box-shadow: 0 6px 24px rgba(201,168,76,.35);
+  margin-bottom: 1.3rem;
+}
+
+.reg-cta-btn:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 32px rgba(201,168,76,.45);
+}
+
+.reg-cta-login {
+  font-family: var(--ff-ui);
+  font-size: .85rem;
+  color: rgba(255,255,255,.4);
+}
+
+.reg-cta-login a {
+  color: var(--tan-light);
+  font-weight: 600;
+  transition: color .2s;
+}
+
+.reg-cta-login a:hover { color: var(--white); }
+
    
    /* ============================================================
       RESPONSIVE
@@ -1005,6 +1296,8 @@
      .main-nav {
        gap: 1.2rem;
      }
+     .rest-preview-grid { grid-template-columns: repeat(2, 1fr); }
+
    }
    
    @media (max-width: 860px) {
@@ -1058,6 +1351,13 @@
      .nav-toggle:checked ~ .nav-burger .nav-burger__line:nth-child(3) {
        transform: translateY(-7px) rotate(-45deg);
      }
+   }
+
+   @media (max-width: 680px) {
+    .rest-preview-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .rest-preview-grid { grid-template-columns: 1fr; gap: 1.1rem; }
+    .reg-cta-section { padding: 4rem 1.4rem; }
+    .reg-cta-features { gap: 1.2rem; flex-direction: column; align-items: flex-start; padding-left: 1rem; }
    }
    
    @media (max-width: 560px) {
