@@ -1,10 +1,8 @@
-/* ============================================================
-   GEORGIAN CULINARY MAP — style.css
-   ============================================================ */
+/* index.css */
 
    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300&family=Nunito:wght@300;400;600;700&display=swap');
 
-   /* ---- CSS VARIABLES ---- */
+   /* CSS VARIABLES */
    :root {
      --maroon-deep:   #3A0A0A;
      --maroon:        #5C1A1A;
@@ -45,7 +43,7 @@
     --glass-border: rgba(255, 255, 255, 0.5);
    }
    
-   /* ---- RESET & BASE ---- */
+   /* RESET & BASE */
    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
    html  { scroll-behavior: smooth; }
  body  {
@@ -62,9 +60,7 @@
    img   { display: block; width: 100%; height: 100%; object-fit: cover; }
    a     { text-decoration: none; color: inherit; }
    
-   /* ============================================================
-      SITE HEADER
-      ============================================================ */
+   /* SITE HEADER */
    .site-header {
      background-color: var(--maroon-deep);
     position: fixed;
@@ -170,7 +166,7 @@
    .nav-link.active::after { width: 100%; }
    .nav-link.active { color: var(--white); font-weight: 700; }
    
-   /* Hidden checkbox for CSS-only mobile menu (out of flex flow) */
+   /* Mobile nav checkbox (visually hidden) */
    .nav-toggle {
      position: absolute;
      left: 0;
@@ -216,9 +212,7 @@
    .header-ornament { opacity: 0.75; }
    .header-ornament svg { display: block; }
    
-   /* ============================================================
-      HERO SECTION
-      ============================================================ */
+   /* HERO SECTION */
    .hero {
      position: relative;
      width: 100%;
@@ -240,9 +234,7 @@
      display: none;
    }
 
-/* ============================================================
-   GEORGIA MAP SECTION
-   ============================================================ */
+/* GEORGIA MAP SECTION */
 .map-section {
   padding: 2rem 1.2rem 1rem;
   background: linear-gradient(180deg, #f8f4ee 0%, #f2ebe2 100%);
@@ -556,9 +548,7 @@
      font-size: 0.6rem;
    }
    
-   /* ============================================================
-      MAP BOX
-      ============================================================ */
+   /* MAP BOX */
    .map-box {
   width: 100%;
    }
@@ -642,7 +632,7 @@
    .rlabel.small { font-size: 8.5px; }
    .rlabel.tiny  { font-size: 7.5px; }
    
-   /* ---- MAP TOOLTIP ---- */
+   /* MAP TOOLTIP */
    .map-tooltip {
      position: absolute;
      background: var(--white);
@@ -698,9 +688,7 @@
    }
    .tooltip-cta:hover { color: var(--red-accent); text-decoration: underline; }
    
-   /* ============================================================
-      SECTION TITLES (shared)
-      ============================================================ */
+   /* SECTION TITLES (shared) */
    .section-title {
      display: flex;
      align-items: center;
@@ -720,9 +708,7 @@
    .ornament-wing { display: flex; align-items: center; }
    .ornament-wing.flipped { transform: scaleX(-1); }
    
-   /* ============================================================
-      DISCOVER REGIONS
-      ============================================================ */
+   /* DISCOVER REGIONS */
    .discover-section {
      background: var(--cream);
      padding: 0 2.5rem 3rem;
@@ -739,9 +725,9 @@
    /* Region card */
    .rcard {
     background: var(--cream-white);
-    border-radius: 12px; /* Smoother corners */
+    border-radius: 12px;
     overflow: hidden;
-    border: none; /* Remove harsh border */
+    border: none;
     box-shadow: 0 4px 12px rgba(58, 10, 10, 0.05), inset 0 0 0 1px rgba(191, 160, 122, 0.2);
     transition: transform 0.5s var(--ease-spring), box-shadow 0.5s var(--ease-smooth);
     position: relative;
@@ -802,9 +788,7 @@
    }
    .explore-btn:hover { color: var(--red-accent); }
    
-   /* ============================================================
-      COMPARE SECTION
-      ============================================================ */
+   /* COMPARE SECTION */
    .compare-section {
      background: var(--cream-light);
      padding: 0 2.5rem 3.5rem;
@@ -821,7 +805,7 @@
    
    .compare-table {
     width: 100%;
-    border-collapse: separate; /* Changed from collapse for border-radius on rows */
+    border-collapse: separate;
     border-spacing: 0;
     min-width: 860px;
   }
@@ -846,7 +830,7 @@
    /* Table body */
    .compare-table tbody tr {
     background: var(--white);
-    transition: background 0.3s ease, transform 0.2s ease; /* Added transform */
+    transition: background 0.3s ease, transform 0.2s ease;
   }
    
    .compare-table tbody tr:nth-child(even) {
@@ -855,15 +839,15 @@
    
    .compare-table tbody tr:hover {
     background: var(--cream-light);
-    transform: scale(1.005); /* Slight pop out */
+    transform: scale(1.005);
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     position: relative;
     z-index: 2;
   }
    
   .compare-table td {
-    padding: 1rem 1.2rem; /* Increased breathing room */
-    border-bottom: 1px solid var(--cream-dark); /* Keep only horizontal lines */
+    padding: 1rem 1.2rem;
+    border-bottom: 1px solid var(--cream-dark);
   }
    .cell-region {
      display: flex !important;
@@ -914,9 +898,7 @@
    .r-badge-samtskhe { border-color: #6A4A7A; background: rgba(106,74,122,0.12); }
    .r-badge-samtskhe::after { background: #6A4A7A; opacity: 0.6; }
    
-   /* ============================================================
-      FOOTER
-      ============================================================ */
+   /* FOOTER */
    .site-footer {
      background: var(--maroon-deep);
      border-top: 2px solid var(--maroon-mid);
@@ -988,9 +970,7 @@
      border-color: var(--tan);
    }
 
-   /* ============================================================
-   RESTAURANTS PREVIEW SECTION
-   ============================================================ */
+   /* RESTAURANTS PREVIEW SECTION */
 .rest-preview-section {
   background: var(--cream-light);
   padding: 0 2.5rem 4rem;
@@ -1013,7 +993,7 @@
   gap: 1.5rem;
 }
 
-/* Restaurant Preview Card */
+/* Restaurant preview card */
 .rpcard {
   background: var(--cream-white);
   border-radius: 12px;
@@ -1116,7 +1096,7 @@
   flex: 1;
 }
 
-/* "See More" CTA */
+/* See-more CTA */
 .rest-preview-cta {
   text-align: center;
   margin-top: 2.8rem;
@@ -1146,9 +1126,7 @@
   box-shadow: 0 8px 28px rgba(58,10,10,.3);
 }
 
-/* ============================================================
-   REGISTER CTA SECTION
-   ============================================================ */
+/* REGISTER CTA SECTION */
 .reg-cta-section {
   position: relative;
   background: var(--maroon-deep);
@@ -1279,9 +1257,7 @@
 .reg-cta-login a:hover { color: var(--white); }
 
    
-   /* ============================================================
-      RESPONSIVE
-      ============================================================ */
+   /* RESPONSIVE */
    @media (max-width: 1280px) {
      .regions-grid {
        grid-template-columns: repeat(3, 1fr);
@@ -1341,7 +1317,7 @@
        display: flex;
      }
    
-     /* Optional: hint open state on the icon */
+     /* Hamburger open state */
      .nav-toggle:checked ~ .nav-burger .nav-burger__line:nth-child(1) {
        transform: translateY(7px) rotate(45deg);
      }

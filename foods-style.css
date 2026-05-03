@@ -1,12 +1,8 @@
-/* ============================================================
-   GEORGIAN CULINARY MAP — foods-style.css
-   Foods Directory Page
-   Brand: Playfair Display · Crimson Pro · Nunito
-   ============================================================ */
+/* foods-style.css */
 
    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap');
 
-   /* ── Brand Variables ──────────────────────────────────────── */
+   /* Brand Variables */
    :root {
      --maroon-deep:   #3A0A0A;
      --maroon:        #5C1A1A;
@@ -48,7 +44,7 @@
      --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
    }
    
-   /* ── Reset & Base ─────────────────────────────────────────── */
+   /* Reset & Base */
    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
    html  { scroll-behavior: smooth; }
    body  {
@@ -63,9 +59,7 @@
    img { display: block; width: 100%; height: 100%; object-fit: cover; }
    a   { text-decoration: none; color: inherit; }
    
-   /* ============================================================
-      HEADER
-      ============================================================ */
+   /* HEADER */
    .site-header {
      background: var(--maroon-deep);
      position: fixed;
@@ -168,9 +162,7 @@
      background: var(--white);
    }
    
-   /* ============================================================
-      HERO
-      ============================================================ */
+   /* HERO */
    .foods-hero {
      position: relative;
      min-height: 72vh;
@@ -308,9 +300,7 @@
      50%       { transform: translateY(5px); }
    }
    
-   /* ============================================================
-      CSS-ONLY FILTER SYSTEM
-      ============================================================ */
+   /* Filters (radio + labels) */
    .filter-radio { display: none; }
    
    .filter-wrapper {
@@ -431,9 +421,7 @@
      white-space: nowrap;
    }
    
-   /* ============================================================
-      FOOD GRID
-      ============================================================ */
+   /* FOOD GRID */
    .food-grid {
      max-width: 1440px;
      margin: 1.8rem auto 0;
@@ -443,9 +431,7 @@
      gap: 1.6rem;
    }
    
-   /* ============================================================
-      FOOD CARD
-      ============================================================ */
+   /* FOOD CARD */
    .fcard {
      background: var(--cream-white);
      border-radius: var(--radius);
@@ -607,9 +593,7 @@
    }
    .fcard__origin svg { color: var(--maroon-mid); flex-shrink: 0; }
    
-   /* ============================================================
-      FEATURED BANNER (middle of grid — full-width callout)
-      ============================================================ */
+   /* FEATURED BANNER (middle of grid — full-width callout) */
    .food-feature-banner {
      max-width: 1440px;
      margin: 2.5rem auto 0;
@@ -704,9 +688,7 @@
      color: rgba(255,255,255,.45);
    }
    
-   /* ============================================================
-      QUOTE BAND
-      ============================================================ */
+   /* QUOTE BAND */
    .quote-band {
      background: var(--maroon-deep);
      padding: 4rem 2.5rem;
@@ -753,9 +735,7 @@
      font-style: normal;
    }
    
-   /* ============================================================
-      FOOTER
-      ============================================================ */
+   /* FOOTER */
    .site-footer {
      background: var(--maroon-deep);
      border-top: 2px solid var(--maroon-mid);
@@ -793,9 +773,7 @@
    }
    .social-btn:hover { background: var(--tan); color: var(--maroon-deep); }
    
-   /* ============================================================
-      RESPONSIVE
-      ============================================================ */
+   /* RESPONSIVE */
    @media (max-width: 1280px) {
      .food-grid { grid-template-columns: repeat(3, 1fr); }
    }

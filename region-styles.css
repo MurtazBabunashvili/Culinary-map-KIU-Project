@@ -1,12 +1,8 @@
-/* ============================================================
-   GEORGIAN CULINARY MAP — region-styles.css
-   Samegrelo Region Page
-   Brand: Playfair Display · Crimson Pro · Nunito
-   ============================================================ */
+/* region-styles.css */
 
    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap');
 
-   /* ── Variables (brand tokens) ──────────────────────────── */
+   /* Variables (brand tokens) */
    :root {
      --maroon-deep:   #3A0A0A;
      --maroon:        #5C1A1A;
@@ -49,7 +45,7 @@
      --ease-smooth:   cubic-bezier(0.16,1,0.3,1);
    }
    
-   /* ── Reset & Base ──────────────────────────────────────── */
+   /* Reset & Base */
    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
    html  { scroll-behavior: smooth; }
    body  {
@@ -65,7 +61,7 @@
    img   { display:block; width:100%; height:100%; object-fit:cover; }
    a     { text-decoration:none; color:inherit; }
    
-   /* ── Shared Section Title ──────────────────────────────── */
+   /* Shared Section Title */
    .section-title {
      display: flex;
      align-items: center;
@@ -84,9 +80,7 @@
    .ornament-wing        { display:flex; align-items:center; }
    .ornament-wing.flipped{ transform:scaleX(-1); }
    
-   /* ============================================================
-      SITE HEADER
-      ============================================================ */
+   /* SITE HEADER */
    .site-header {
      background: var(--maroon-deep);
      position: fixed;
@@ -187,9 +181,7 @@
      background: var(--white);
    }
    
-   /* ============================================================
-      HERO
-      ============================================================ */
+   /* HERO */
    .region-hero {
      position: relative;
      min-height: 92vh;
@@ -210,7 +202,7 @@
    .region-hero:hover .region-hero__bg {
      transform: scale(1.00);
    }
-   /* Multi-layer gradient for depth */
+   /* Hero overlay */
    .region-hero__overlay {
      position: absolute;
      inset: 0;
@@ -349,9 +341,7 @@
      color: rgba(255,255,255,.55);
    }
    
-   /* ============================================================
-      INTRO / OVERVIEW
-      ============================================================ */
+   /* INTRO / OVERVIEW */
    .region-intro {
      background: var(--cream-white);
      padding: 5rem 2.5rem;
@@ -479,9 +469,7 @@
      line-height: 1.3;
    }
    
-   /* ============================================================
-      SIGNATURE DISHES
-      ============================================================ */
+   /* SIGNATURE DISHES */
    .dishes-section {
      background: var(--cream);
      padding: 0 2.5rem 5rem;
@@ -683,9 +671,7 @@
      border-radius: 12px;
    }
    
-   /* ============================================================
-      CULINARY STORY — full-width atmospheric
-      ============================================================ */
+   /* CULINARY STORY — full-width atmospheric */
    .story-section {
      position: relative;
      padding: 6rem 2.5rem;
@@ -844,9 +830,7 @@
      line-height: 1.6;
    }
    
-   /* ============================================================
-      INGREDIENTS & SPICES
-      ============================================================ */
+   /* INGREDIENTS & SPICES */
    .ingredients-section {
      background: var(--cream-light);
      padding: 0 2.5rem 5rem;
@@ -903,9 +887,7 @@
      color: var(--text-muted);
    }
    
-   /* ============================================================
-      RESTAURANTS SECTION
-      ============================================================ */
+   /* RESTAURANTS SECTION */
    .restaurants-section {
      background: var(--cream);
      padding: 0 2.5rem 5rem;
@@ -1063,9 +1045,7 @@
      transform: translateY(-1px);
    }
    
-   /* ============================================================
-      MAP CTA BANNER
-      ============================================================ */
+   /* MAP CTA BANNER */
    .cta-banner {
      background: var(--region-accent);
      padding: 4rem 2.5rem;
@@ -1117,9 +1097,7 @@
      box-shadow: 0 8px 24px rgba(0,0,0,.2);
    }
    
-   /* ============================================================
-      FOOTER
-      ============================================================ */
+   /* FOOTER */
    .site-footer {
      background: var(--maroon-deep);
      border-top: 2px solid var(--maroon-mid);
@@ -1171,9 +1149,7 @@
      color: var(--maroon-deep);
    }
    
-   /* ============================================================
-      SCROLL REVEAL ANIMATIONS
-      ============================================================ */
+   /* Scroll animations */
    @keyframes fadeInUp {
      from { opacity:0; transform:translateY(28px); }
      to   { opacity:1; transform:translateY(0); }
@@ -1197,9 +1173,7 @@
    .delay-5   { animation-delay:.60s; }
    .delay-6   { animation-delay:.72s; }
    
-   /* ============================================================
-      RESPONSIVE
-      ============================================================ */
+   /* RESPONSIVE */
    @media (max-width: 1200px) {
      .dishes-grid { grid-template-columns: repeat(2, 1fr); }
      .ingredients-grid { grid-template-columns: repeat(4, 1fr); }
