@@ -1,449 +1,677 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ka">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>საქართველოს კულინარიული რუკა — რეგისტრაცია</title>
-  <link rel="stylesheet" href="register.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+Georgian:wght@300;400;600&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>საქართველოს კულინარიული რუკა — რეგისტრაცია</title>
+    <link rel="stylesheet" href="register.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+Georgian:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Left panel -->
+    <div class="panel panel--left">
+      <!-- Background -->
+      <div
+        class="panel__bg"
+        style="background-image: url(&quot;images/login/background.png&quot;)"
+      ></div>
+      <div class="panel__overlay"></div>
 
-  <!-- Left panel -->
-  <div class="panel panel--left">
+      <!-- Content -->
+      <div class="panel__content">
+        <!-- Logo -->
+        <div class="logo">
+          <div class="logo__icon">
+            <!-- Logo icon SVG -->
+            <svg
+              viewBox="0 0 64 64"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <g
+                stroke="#E8D5A3"
+                stroke-width="2.1"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M13 16h11" />
+                <path d="M16 16v4" />
+                <path d="M21 16v4" />
+                <path d="M12 20c0 0-2 5-2 11v10c0 7 4 11 12 12" />
+                <path d="M24 20c0 0 2 5 2 11v10c0 7-4 11-12 12" />
+                <path d="M14 53h8" />
 
-    <!-- Background -->
-    <div class="panel__bg" style="background-image: url('images/login/background.png');"></div>
-    <div class="panel__overlay"></div>
+                <path d="M38 20c2-3 5-5 8-6" />
 
-    <!-- Content -->
-    <div class="panel__content">
-
-      <!-- Logo -->
-      <div class="logo">
-        <div class="logo__icon">
-          <!-- Logo icon SVG -->
-          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <g stroke="#E8D5A3" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 16h11" />
-              <path d="M16 16v4" />
-              <path d="M21 16v4" />
-              <path d="M12 20c0 0-2 5-2 11v10c0 7 4 11 12 12" />
-              <path d="M24 20c0 0 2 5 2 11v10c0 7-4 11-12 12" />
-              <path d="M14 53h8" />
-
-              <path d="M38 20c2-3 5-5 8-6" />
-
-              <circle cx="45" cy="22" r="3.2" />
-              <circle cx="41" cy="28" r="3.2" />
-              <circle cx="49" cy="28" r="3.2" />
-              <circle cx="45" cy="34" r="3.2" />
-              <circle cx="41" cy="40" r="3.2" />
-              <circle cx="49" cy="40" r="3.2" />
-              <circle cx="45" cy="46" r="3.2" />
-            </g>
-          </svg>
-        </div>
-        <div class="logo__text">
-          <span class="logo__line1">საქართველოს</span>
-          <span class="logo__line2">კულინარიული რუკა</span>
-        </div>
-      </div>
-
-      <!-- Title -->
-      <div class="hero-text">
-        <div class="hero-text__divider">
-          <span class="divider-line"></span>
-          <span class="divider-ornament">✦</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <h1 class="hero-title">
-          <span class="hero-title__small">ინტერაქტიული</span>
-          <span class="hero-title__small">კულინარიული რუკა</span>
-        </h1>
-
-        <div class="hero-text__divider hero-text__divider--bottom">
-          <span class="divider-line"></span>
-          <span class="divider-ornament">◆</span>
-          <span class="divider-line"></span>
-        </div>
-
-        <p class="hero-desc">
-          აღმოაჩინე მდიდარი გემოები, ტრადიციები და<br/>
-          თითოეული რეგიონის სტუმართმოყვარეობა.
-        </p>
-      </div>
-
-      <!-- Feature cards -->
-      <div class="features">
-        <div class="feature">
-          <div class="feature__icon">
-            <!-- Map icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-              <line x1="9" y1="3" x2="9" y2="18"/>
-              <line x1="15" y1="6" x2="15" y2="21"/>
+                <circle cx="45" cy="22" r="3.2" />
+                <circle cx="41" cy="28" r="3.2" />
+                <circle cx="49" cy="28" r="3.2" />
+                <circle cx="45" cy="34" r="3.2" />
+                <circle cx="41" cy="40" r="3.2" />
+                <circle cx="49" cy="40" r="3.2" />
+                <circle cx="45" cy="46" r="3.2" />
+              </g>
             </svg>
           </div>
-          <div class="feature__body">
-            <h3 class="feature__title">ინტერაქტიული რუკა</h3>
-            <p class="feature__desc">აირჩიე რეგიონი და ნახე უნიკალური სამზარეულო.</p>
+          <div class="logo__text">
+            <span class="logo__line1">საქართველოს</span>
+            <span class="logo__line2">კულინარიული რუკა</span>
           </div>
         </div>
 
-        <div class="feature">
-          <div class="feature__icon">
-            <!-- Fork/knife -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <line x1="8" y1="3" x2="8" y2="21"/>
-              <path d="M6 3 C6 3 5 6 5 9 C5 12 6 13 8 13"/>
-              <path d="M10 3 C10 3 11 6 11 9 C11 12 10 13 8 13"/>
-              <line x1="16" y1="3" x2="16" y2="21"/>
-              <path d="M13 3 L19 9 L19 21"/>
-            </svg>
+        <!-- Title -->
+        <div class="hero-text">
+          <div class="hero-text__divider">
+            <span class="divider-line"></span>
+            <span class="divider-ornament">✦</span>
+            <span class="divider-line"></span>
           </div>
-          <div class="feature__body">
-            <h3 class="feature__title">ტრადიციული რეცეპტები</h3>
-            <p class="feature__desc">გაეცანი ავთენტურ კერძებს და მათ ისტორიებს.</p>
+
+          <h1 class="hero-title">
+            <span class="hero-title__small">ინტერაქტიული</span>
+            <span class="hero-title__small">კულინარიული რუკა</span>
+          </h1>
+
+          <div class="hero-text__divider hero-text__divider--bottom">
+            <span class="divider-line"></span>
+            <span class="divider-ornament">◆</span>
+            <span class="divider-line"></span>
           </div>
+
+          <p class="hero-desc">
+            აღმოაჩინე მდიდარი გემოები, ტრადიციები და<br />
+            თითოეული რეგიონის სტუმართმოყვარეობა.
+          </p>
         </div>
 
-        <div class="feature">
-          <div class="feature__icon">
-            <!-- Pin icon -->
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-          </div>
-          <div class="feature__body">
-            <h3 class="feature__title">ადგილობრივი რესტორნები</h3>
-            <p class="feature__desc">იპოვე საუკეთესო ადგილები ქართული გემოებისათვის.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-
-  <!-- Right panel -->
-  <div class="panel panel--right">
-
-    <!-- Grain -->
-    <div class="panel__grain"></div>
-
-    <div class="form-wrapper">
-
-      <!-- Top ornament -->
-      <div class="form-ornament">
-        <svg class="ornament-curl ornament-curl--left" viewBox="0 0 60 30" fill="none">
-          <path d="M58 15 C50 5 35 2 20 8 C10 12 5 20 2 15" stroke="#7A1C2E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        </svg>
-        <!-- Grapes -->
-        <svg class="ornament-grape" viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="8"  r="5" fill="#7A1C2E"/>
-          <circle cx="11" cy="16" r="5" fill="#7A1C2E"/>
-          <circle cx="25" cy="16" r="5" fill="#7A1C2E"/>
-          <circle cx="18" cy="24" r="5" fill="#7A1C2E"/>
-          <circle cx="11" cy="32" r="4" fill="#7A1C2E"/>
-          <circle cx="25" cy="32" r="4" fill="#7A1C2E"/>
-          <circle cx="18" cy="39" r="3.5" fill="#7A1C2E"/>
-          <path d="M18 3 C18 3 22 0 26 1" stroke="#7A1C2E" stroke-width="1.5" stroke-linecap="round" fill="none"/>
-        </svg>
-        <svg class="ornament-curl ornament-curl--right" viewBox="0 0 60 30" fill="none">
-          <path d="M2 15 C10 5 25 2 40 8 C50 12 55 20 58 15" stroke="#7A1C2E" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-        </svg>
-      </div>
-
-      <!-- Heading -->
-      <div class="form-heading">
-        <h2 class="form-heading__title">შემოგვიერთდი!</h2>
-        <p class="form-heading__subtitle">
-          შექმენი ანგარიში და დაიწყე კულინარიული<br/>მოგზაურობა საქართველოს მასშტაბით.
-        </p>
-        <div class="form-heading__rule">
-          <span></span><span class="rule-diamond">◆</span><span></span>
-        </div>
-      </div>
-
-      <!-- Tab bar -->
-      <div class="tabs">
-        <a href="#login" class="tab tab--login">
-          <svg class="tab__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          ავტორიზაცია
-        </a>
-        <a href="#register" class="tab tab--register tab--active">
-          <svg class="tab__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
-            <circle cx="9" cy="7" r="4"/>
-            <line x1="19" y1="8" x2="19" y2="14"/>
-            <line x1="22" y1="11" x2="16" y2="11"/>
-          </svg>
-          რეგისტრაცია
-        </a>
-      </div>
-
-      <div class="auth-panels">
-      <!-- Login Form -->
-      <div class="form-card form-card--login" id="login">
-
-        <div class="field">
-          <label class="field__label" for="login-email">ელფოსტა</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+        <!-- Feature cards -->
+        <div class="features">
+          <div class="feature">
+            <div class="feature__icon">
+              <!-- Map icon -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+                <line x1="9" y1="3" x2="9" y2="18" />
+                <line x1="15" y1="6" x2="15" y2="21" />
               </svg>
-            </span>
-            <input class="field__input" type="email" id="login-email" placeholder="შეიყვანე ელფოსტა" />
-          </div>
-        </div>
-
-        <div class="field">
-          <label class="field__label" for="login-password">პაროლი</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </span>
-            <input class="field__input" type="password" id="login-password" placeholder="შეიყვანე პაროლი" />
-            <button class="field__eye" type="button" tabindex="-1" aria-label="პაროლის ჩვენება/დამალვა">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="checkbox-row">
-          <label class="checkbox-label" for="remember">
-            <input class="checkbox-input" type="checkbox" id="remember" />
-            <span class="checkbox-box"></span>
-            <span class="checkbox-text">დამიმახსოვრე</span>
-          </label>
-        </div>
-
-        <button class="btn-primary" type="button">
-          შესვლა
-        </button>
-
-        <div class="divider">
-          <span class="divider__line"></span>
-          <span class="divider__text">ან</span>
-          <span class="divider__line"></span>
-        </div>
-
-        <button class="btn-social" type="button">
-          <svg class="btn-social__logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-          შესვლა Google-ით
-        </button>
-
-        <button class="btn-social" type="button">
-          <svg class="btn-social__logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
-          </svg>
-          შესვლა Facebook-ით
-        </button>
-
-      </div>
-
-      <!-- Register Form -->
-      <div class="form-card form-card--register" id="register">
-
-        <!-- Name -->
-        <div class="field-row">
-          <div class="field">
-            <label class="field__label" for="firstname">სახელი</label>
-            <div class="field__input-wrap">
-              <span class="field__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </span>
-              <input class="field__input" type="text" id="firstname" placeholder="სახელი" />
+            </div>
+            <div class="feature__body">
+              <h3 class="feature__title">ინტერაქტიული რუკა</h3>
+              <p class="feature__desc">
+                აირჩიე რეგიონი და ნახე უნიკალური სამზარეულო.
+              </p>
             </div>
           </div>
 
-          <div class="field">
-            <label class="field__label" for="lastname">გვარი</label>
-            <div class="field__input-wrap">
-              <span class="field__icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-                  <circle cx="12" cy="7" r="4"/>
-                </svg>
-              </span>
-              <input class="field__input" type="text" id="lastname" placeholder="გვარი" />
+          <div class="feature">
+            <div class="feature__icon">
+              <!-- Fork/knife -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <line x1="8" y1="3" x2="8" y2="21" />
+                <path d="M6 3 C6 3 5 6 5 9 C5 12 6 13 8 13" />
+                <path d="M10 3 C10 3 11 6 11 9 C11 12 10 13 8 13" />
+                <line x1="16" y1="3" x2="16" y2="21" />
+                <path d="M13 3 L19 9 L19 21" />
+              </svg>
+            </div>
+            <div class="feature__body">
+              <h3 class="feature__title">ტრადიციული რეცეპტები</h3>
+              <p class="feature__desc">
+                გაეცანი ავთენტურ კერძებს და მათ ისტორიებს.
+              </p>
+            </div>
+          </div>
+
+          <div class="feature">
+            <div class="feature__icon">
+              <!-- Pin icon -->
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+            </div>
+            <div class="feature__body">
+              <h3 class="feature__title">ადგილობრივი რესტორნები</h3>
+              <p class="feature__desc">
+                იპოვე საუკეთესო ადგილები ქართული გემოებისათვის.
+              </p>
             </div>
           </div>
         </div>
-
-        <!-- Email -->
-        <div class="field">
-          <label class="field__label" for="email">ელფოსტა</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="2" y="4" width="20" height="16" rx="2"/>
-                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-              </svg>
-            </span>
-            <input class="field__input" type="email" id="email" placeholder="შეიყვანე ელფოსტა" />
-          </div>
-        </div>
-
-        <!-- Favorite region -->
-        <div class="field">
-          <label class="field__label" for="region">საყვარელი კულინარიული რეგიონი</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/>
-                <line x1="9" y1="3" x2="9" y2="18"/>
-                <line x1="15" y1="6" x2="15" y2="21"/>
-              </svg>
-            </span>
-            <select class="field__input field__select" id="region">
-              <option value="" disabled selected>აირჩიე რეგიონი...</option>
-              <option value="kakheti">კახეთი</option>
-              <option value="imereti">იმერეთი</option>
-              <option value="samegrelo">სამეგრელო</option>
-              <option value="adjara">აჭარა</option>
-              <option value="svaneti">სვანეთი</option>
-              <option value="racha">რაჭა-ლეჩხუმი</option>
-              <option value="guria">გურია</option>
-              <option value="mtskheta">მცხეთა-მთიანეთი</option>
-              <option value="shida">შიდა ქართლი</option>
-              <option value="kvemo">ქვემო ქართლი</option>
-              <option value="samtskhe">სამცხე-ჯავახეთი</option>
-              <option value="tbilisi">თბილისი</option>
-              <option value="abkhazia">აფხაზეთი</option>
-            </select>
-          </div>
-        </div>
-
-        <!-- Password -->
-        <div class="field">
-          <label class="field__label" for="password">პაროლი</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </span>
-            <input class="field__input" type="password" id="password" placeholder="შექმენი პაროლი" />
-            <button class="field__eye" type="button" tabindex="-1" aria-label="პაროლის ჩვენება/დამალვა">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- Confirm Password -->
-        <div class="field">
-          <label class="field__label" for="confirm">გაიმეორე პაროლი</label>
-          <div class="field__input-wrap">
-            <span class="field__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
-                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-              </svg>
-            </span>
-            <input class="field__input" type="password" id="confirm" placeholder="გაიმეორე პაროლი" />
-            <button class="field__eye" type="button" tabindex="-1" aria-label="პაროლის ჩვენება/დამალვა">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                <circle cx="12" cy="12" r="3"/>
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <!-- About you -->
-        <div class="field">
-          <label class="field__label" for="motivation">რატომ გაინტერესებთ ქართული სამზარეულო?</label>
-          <textarea
-            class="field__input field__textarea"
-            id="motivation"
-            placeholder="მოგვიყევი შენი კულინარიული ინტერესების შესახებ..."
-            rows="3"
-          ></textarea>
-        </div>
-
-        <!-- Terms checkbox -->
-        <div class="checkbox-row">
-          <label class="checkbox-label" for="terms">
-            <input class="checkbox-input" type="checkbox" id="terms" />
-            <span class="checkbox-box"></span>
-            <span class="checkbox-text">
-              ვეთანხმები <a href="#" class="link">მომსახურების პირობებს</a> და <a href="#" class="link">კონფიდენციალურობის პოლიტიკას</a>
-            </span>
-          </label>
-        </div>
-
-        <!-- Submit button -->
-        <button class="btn-primary" type="button">
-          ანგარიშის შექმნა
-        </button>
-
-        <!-- Divider -->
-        <div class="divider">
-          <span class="divider__line"></span>
-          <span class="divider__text">ან</span>
-          <span class="divider__line"></span>
-        </div>
-
-        <!-- Social buttons -->
-        <button class="btn-social" type="button">
-          <!-- Google -->
-          <svg class="btn-social__logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
-            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
-            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
-            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
-          </svg>
-          გაგრძელება Google-ით
-        </button>
-
-        <button class="btn-social" type="button">
-          <!-- Facebook -->
-          <svg class="btn-social__logo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="#1877F2"/>
-          </svg>
-          გაგრძელება Facebook-ით
-        </button>
-
       </div>
-      </div>
-
-      <!-- Footer link -->
-      <p class="form-footer">
-        უკვე გაქვს ანგარიში?&nbsp;
-        <a href="#login" class="link link--bold">ავტორიზაცია</a>
-      </p>
-
     </div>
-  </div>
 
-</body>
+    <!-- Right panel -->
+    <div class="panel panel--right">
+      <!-- Grain -->
+      <div class="panel__grain"></div>
+
+      <div class="form-wrapper">
+        <!-- Top ornament -->
+        <div class="form-ornament">
+          <svg
+            class="ornament-curl ornament-curl--left"
+            viewBox="0 0 60 30"
+            fill="none"
+          >
+            <path
+              d="M58 15 C50 5 35 2 20 8 C10 12 5 20 2 15"
+              stroke="#7A1C2E"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </svg>
+          <!-- Grapes -->
+          <svg
+            class="ornament-grape"
+            viewBox="0 0 36 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="18" cy="8" r="5" fill="#7A1C2E" />
+            <circle cx="11" cy="16" r="5" fill="#7A1C2E" />
+            <circle cx="25" cy="16" r="5" fill="#7A1C2E" />
+            <circle cx="18" cy="24" r="5" fill="#7A1C2E" />
+            <circle cx="11" cy="32" r="4" fill="#7A1C2E" />
+            <circle cx="25" cy="32" r="4" fill="#7A1C2E" />
+            <circle cx="18" cy="39" r="3.5" fill="#7A1C2E" />
+            <path
+              d="M18 3 C18 3 22 0 26 1"
+              stroke="#7A1C2E"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </svg>
+          <svg
+            class="ornament-curl ornament-curl--right"
+            viewBox="0 0 60 30"
+            fill="none"
+          >
+            <path
+              d="M2 15 C10 5 25 2 40 8 C50 12 55 20 58 15"
+              stroke="#7A1C2E"
+              stroke-width="1.2"
+              stroke-linecap="round"
+              fill="none"
+            />
+          </svg>
+        </div>
+
+        <!-- Heading -->
+        <div class="form-heading">
+          <h2 class="form-heading__title">შემოგვიერთდი!</h2>
+          <p class="form-heading__subtitle">
+            შექმენი ანგარიში და დაიწყე კულინარიული<br />მოგზაურობა საქართველოს
+            მასშტაბით.
+          </p>
+          <div class="form-heading__rule">
+            <span></span><span class="rule-diamond">◆</span><span></span>
+          </div>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="tabs">
+          <a href="#login" class="tab tab--login">
+            <svg
+              class="tab__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            ავტორიზაცია
+          </a>
+          <a href="#register" class="tab tab--register tab--active">
+            <svg
+              class="tab__icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <line x1="19" y1="8" x2="19" y2="14" />
+              <line x1="22" y1="11" x2="16" y2="11" />
+            </svg>
+            რეგისტრაცია
+          </a>
+        </div>
+
+        <div class="auth-panels">
+          <!-- Login Form -->
+          <div class="form-card form-card--login" id="login">
+            <div class="field">
+              <label class="field__label" for="login-email">ელფოსტა</label>
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </span>
+                <input
+                  class="field__input"
+                  type="email"
+                  id="login-email"
+                  placeholder="შეიყვანე ელფოსტა"
+                />
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="login-password">პაროლი</label>
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                </span>
+                <input
+                  class="field__input"
+                  type="password"
+                  id="login-password"
+                  placeholder="შეიყვანე პაროლი"
+                />
+                <button
+                  class="field__eye"
+                  type="button"
+                  tabindex="-1"
+                  aria-label="პაროლის ჩვენება/დამალვა"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="checkbox-row">
+              <label class="checkbox-label" for="remember">
+                <input class="checkbox-input" type="checkbox" id="remember" />
+                <span class="checkbox-box"></span>
+                <span class="checkbox-text">დამიმახსოვრე</span>
+              </label>
+            </div>
+
+            <button class="btn-primary" type="button">შესვლა</button>
+
+            <div class="divider">
+              <span class="divider__line"></span>
+              <span class="divider__text">ან</span>
+              <span class="divider__line"></span>
+            </div>
+
+            <button class="btn-social" type="button">
+              <svg
+                class="btn-social__logo"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4"
+                />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853"
+                />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  fill="#FBBC05"
+                />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335"
+                />
+              </svg>
+              შესვლა Google-ით
+            </button>
+
+            <button class="btn-social" type="button">
+              <svg
+                class="btn-social__logo"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  fill="#1877F2"
+                />
+              </svg>
+              შესვლა Facebook-ით
+            </button>
+          </div>
+
+          <!-- Register Form -->
+          <div class="form-card form-card--register" id="register">
+            <!-- Name -->
+            <div class="field-row">
+              <div class="field">
+                <label class="field__label" for="firstname">სახელი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </span>
+                  <input
+                    class="field__input"
+                    type="text"
+                    id="firstname"
+                    placeholder="სახელი"
+                  />
+                </div>
+              </div>
+
+              <div class="field">
+                <label class="field__label" for="lastname">გვარი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </span>
+                  <input
+                    class="field__input"
+                    type="text"
+                    id="lastname"
+                    placeholder="გვარი"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="field">
+              <label class="field__label" for="email">ელფოსტა</label>
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </span>
+                <input
+                  class="field__input"
+                  type="email"
+                  id="email"
+                  placeholder="შეიყვანე ელფოსტა"
+                />
+              </div>
+            </div>
+
+            <!-- Favorite region -->
+            <div class="field">
+              <label class="field__label" for="region"
+                >საყვარელი კულინარიული რეგიონი</label
+              >
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21" />
+                    <line x1="9" y1="3" x2="9" y2="18" />
+                    <line x1="15" y1="6" x2="15" y2="21" />
+                  </svg>
+                </span>
+                <select class="field__input field__select" id="region">
+                  <option value="" disabled selected>აირჩიე რეგიონი...</option>
+                  <option value="kakheti">კახეთი</option>
+                  <option value="imereti">იმერეთი</option>
+                  <option value="samegrelo">სამეგრელო</option>
+                  <option value="adjara">აჭარა</option>
+                  <option value="svaneti">სვანეთი</option>
+                  <option value="racha">რაჭა-ლეჩხუმი</option>
+                  <option value="guria">გურია</option>
+                  <option value="mtskheta">მცხეთა-მთიანეთი</option>
+                  <option value="shida">შიდა ქართლი</option>
+                  <option value="kvemo">ქვემო ქართლი</option>
+                  <option value="samtskhe">სამცხე-ჯავახეთი</option>
+                  <option value="tbilisi">თბილისი</option>
+                  <option value="abkhazia">აფხაზეთი</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Password -->
+            <div class="field">
+              <label class="field__label" for="password">პაროლი</label>
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                </span>
+                <input
+                  class="field__input"
+                  type="password"
+                  id="password"
+                  placeholder="შექმენი პაროლი"
+                />
+                <button
+                  class="field__eye"
+                  type="button"
+                  tabindex="-1"
+                  aria-label="პაროლის ჩვენება/დამალვა"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="field">
+              <label class="field__label" for="confirm">გაიმეორე პაროლი</label>
+              <div class="field__input-wrap">
+                <span class="field__icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                  </svg>
+                </span>
+                <input
+                  class="field__input"
+                  type="password"
+                  id="confirm"
+                  placeholder="გაიმეორე პაროლი"
+                />
+                <button
+                  class="field__eye"
+                  type="button"
+                  tabindex="-1"
+                  aria-label="პაროლის ჩვენება/დამალვა"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- About you -->
+            <div class="field">
+              <label class="field__label" for="motivation"
+                >რატომ გაინტერესებთ ქართული სამზარეულო?</label
+              >
+              <textarea
+                class="field__input field__textarea"
+                id="motivation"
+                placeholder="მოგვიყევი შენი კულინარიული ინტერესების შესახებ..."
+                rows="3"
+              ></textarea>
+            </div>
+
+            <!-- Terms checkbox -->
+            <div class="checkbox-row">
+              <label class="checkbox-label" for="terms">
+                <input class="checkbox-input" type="checkbox" id="terms" />
+                <span class="checkbox-box"></span>
+                <span class="checkbox-text">
+                  ვეთანხმები
+                  <a href="#" class="link">მომსახურების პირობებს</a> და
+                  <a href="#" class="link">კონფიდენციალურობის პოლიტიკას</a>
+                </span>
+              </label>
+            </div>
+
+            <!-- Submit button -->
+            <button class="btn-primary" type="button">ანგარიშის შექმნა</button>
+
+            <!-- Divider -->
+            <div class="divider">
+              <span class="divider__line"></span>
+              <span class="divider__text">ან</span>
+              <span class="divider__line"></span>
+            </div>
+
+            <!-- Social buttons -->
+            <button class="btn-social" type="button">
+              <!-- Google -->
+              <svg
+                class="btn-social__logo"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
+                  fill="#4285F4"
+                />
+                <path
+                  d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
+                  fill="#34A853"
+                />
+                <path
+                  d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
+                  fill="#FBBC05"
+                />
+                <path
+                  d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
+                  fill="#EA4335"
+                />
+              </svg>
+              გაგრძელება Google-ით
+            </button>
+
+            <button class="btn-social" type="button">
+              <!-- Facebook -->
+              <svg
+                class="btn-social__logo"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                  fill="#1877F2"
+                />
+              </svg>
+              გაგრძელება Facebook-ით
+            </button>
+          </div>
+        </div>
+
+        <!-- Footer link -->
+        <p class="form-footer">
+          უკვე გაქვს ანგარიში?&nbsp;
+          <a href="#login" class="link link--bold">ავტორიზაცია</a>
+        </p>
+      </div>
+    </div>
+    <script src="auth.js"></script>
+  </body>
 </html>

@@ -14,12 +14,13 @@ async function isAuth(req, res, next) {
   const token = getToken(req.headers);
   if (!token) {
     return res
-      .status(400)
+      .status(401)
       .json({ message: "You can not access this page. Please sign in." });
   }
   try {
     const payLoad = jwt.verify(token, process.env.JWT_SECRET);
     req.userId = payLoad.userId;
+    req.role = payLoad.role;
     next();
   } catch (error) {
     console.error("Please isAuth error", error.message);

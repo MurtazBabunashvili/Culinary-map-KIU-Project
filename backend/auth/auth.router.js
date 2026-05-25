@@ -50,6 +50,7 @@ authRouter.post("/sign-in", async (req, res) => {
 
   const payLoad = {
     userId: existingUser._id,
+    role: existingUser.role,
   };
 
   const token = jwt.sign(payLoad, process.env.JWT_SECRET, { expiresIn: "7d" });

@@ -1,4 +1,4 @@
-const { default: mongoose } = requrie("mongoose");
+const { default: mongoose } = require("mongoose");
 
 const userSchema = new mongoose.Schema(
   {
@@ -33,8 +33,15 @@ const userSchema = new mongoose.Schema(
       required: true,
     },
 
+    role: {
+      type: String,
+      enum: ["admin", "member"],
+      default: "member",
+    },
+
     password: {
       type: String,
+      required: true,
     },
   },
   { timestamps: true },
