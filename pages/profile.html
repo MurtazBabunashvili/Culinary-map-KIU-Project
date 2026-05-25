@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ka">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>პროფილი — Georgian Flavors</title>
+    <link rel="stylesheet" href="../styles/profile.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="logo">
+          <div class="logo-emblem">
+            <img src="images/logo.png" alt="Georgian Flavors" />
+          </div>
+          <div class="logo-text">
+            <span class="logo-line1">Georgian</span>
+            <span class="logo-line2">Flavors</span>
+          </div>
+        </a>
+
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+        <label for="nav-toggle" class="nav-burger" aria-label="მენიუ">
+          <span class="nav-burger__line"></span>
+          <span class="nav-burger__line"></span>
+          <span class="nav-burger__line"></span>
+        </label>
+
+        <nav class="main-nav">
+          <a href="index.html" class="nav-link">მთავარი</a>
+          <a href="foods.html" class="nav-link">კერძები</a>
+          <a href="restaurants.html" class="nav-link">რესტორნები</a>
+          <a href="profile.html" class="nav-link active">პროფილი</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- PROFILE HERO BAND -->
+    <section class="profile-hero">
+      <div class="profile-hero__bg"></div>
+      <div class="profile-hero__overlay"></div>
+      <div class="profile-hero__content">
+        <div class="profile-avatar" id="profile-avatar">
+          <span id="avatar-initials">–</span>
+        </div>
+        <div class="profile-hero__text">
+          <p class="profile-hero__greeting">გამარჯობა,</p>
+          <h1 class="profile-hero__name" id="hero-name">იტვირთება…</h1>
+          <p class="profile-hero__region" id="hero-region">
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <span>—</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <main class="profile-main">
+      <div class="profile-layout">
+        <!-- LEFT: NAV SIDEBAR -->
+        <aside class="profile-sidebar">
+          <nav class="profile-nav">
+            <button class="profile-nav__item active" data-tab="info">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+              <span>პირადი ინფო</span>
+            </button>
+            <button class="profile-nav__item" data-tab="password">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>პაროლის შეცვლა</span>
+            </button>
+            <button
+              class="profile-nav__item profile-nav__item--danger"
+              data-tab="delete"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <polyline points="3 6 5 6 21 6" />
+                <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                <path d="M10 11v6" />
+                <path d="M14 11v6" />
+                <path d="M9 6V4h6v2" />
+              </svg>
+              <span>ანგარიშის წაშლა</span>
+            </button>
+          </nav>
+
+          <button class="logout-btn" id="logout-btn">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+              <polyline points="16 17 21 12 16 7" />
+              <line x1="21" y1="12" x2="9" y2="12" />
+            </svg>
+            <span>გამოსვლა</span>
+          </button>
+        </aside>
+
+        <!-- RIGHT: PANELS -->
+        <div class="profile-panels">
+          <!-- PERSONAL INFO PANEL -->
+          <section class="panel-card" id="panel-info">
+            <div class="panel-card__header">
+              <h2 class="panel-card__title">პირადი ინფორმაცია</h2>
+              <p class="panel-card__subtitle">
+                შეცვალეთ სახელი, გვარი, ელფოსტა ან რეგიონი
+              </p>
+            </div>
+
+            <div id="info-alert" class="alert" style="display: none"></div>
+
+            <div class="form-grid">
+              <div class="field">
+                <label class="field__label" for="info-firstname">სახელი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="info-firstname"
+                    class="field__input"
+                    placeholder="სახელი"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="info-lastname">გვარი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                      <circle cx="12" cy="7" r="4" />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    id="info-lastname"
+                    class="field__input"
+                    placeholder="გვარი"
+                  />
+                </div>
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="info-email">ელფოსტა</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                      />
+                      <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                  </span>
+                  <input
+                    type="email"
+                    id="info-email"
+                    class="field__input"
+                    placeholder="you@example.com"
+                  />
+                </div>
+              </div>
+              <div class="field field--full">
+                <label class="field__label" for="info-region">რეგიონი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path
+                        d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"
+                      />
+                      <circle cx="12" cy="10" r="3" />
+                    </svg>
+                  </span>
+                  <select id="info-region" class="field__input field__select">
+                    <option value="">— აირჩიეთ რეგიონი —</option>
+                    <option value="კახეთი">კახეთი</option>
+                    <option value="იმერეთი">იმერეთი</option>
+                    <option value="სამეგრელო">სამეგრელო</option>
+                    <option value="აჭარა">აჭარა</option>
+                    <option value="სვანეთი">სვანეთი</option>
+                    <option value="რაჭა-ლეჩხუმი">რაჭა-ლეჩხუმი</option>
+                    <option value="გურია">გურია</option>
+                    <option value="მცხეთა-მთიანეთი">მცხეთა-მთიანეთი</option>
+                    <option value="შიდა ქართლი">შიდა ქართლი</option>
+                    <option value="ქვემო ქართლი">ქვემო ქართლი</option>
+                    <option value="სამცხე-ჯავახეთი">სამცხე-ჯავახეთი</option>
+                    <option value="თბილისი">თბილისი</option>
+                    <option value="აფხაზეთი">აფხაზეთი</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-card__footer">
+              <button
+                class="btn-primary"
+                id="info-save-btn"
+                data-label="შენახვა"
+              >
+                შენახვა
+              </button>
+            </div>
+          </section>
+
+          <!-- PASSWORD PANEL -->
+          <section class="panel-card" id="panel-password" style="display: none">
+            <div class="panel-card__header">
+              <h2 class="panel-card__title">პაროლის შეცვლა</h2>
+              <p class="panel-card__subtitle">
+                შეიყვანეთ მიმდინარე და ახალი პაროლი
+              </p>
+            </div>
+
+            <div id="pwd-alert" class="alert" style="display: none"></div>
+
+            <div class="form-grid form-grid--single">
+              <div class="field">
+                <label class="field__label" for="pwd-current"
+                  >მიმდინარე პაროლი</label
+                >
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="11" width="18" height="11" rx="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="pwd-current"
+                    class="field__input"
+                    placeholder="••••••••"
+                  />
+                  <button type="button" class="field__eye">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="pwd-new">ახალი პაროლი</label>
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="11" width="18" height="11" rx="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="pwd-new"
+                    class="field__input"
+                    placeholder="••••••••"
+                  />
+                  <button type="button" class="field__eye">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="field">
+                <label class="field__label" for="pwd-confirm"
+                  >გაიმეორეთ ახალი პაროლი</label
+                >
+                <div class="field__input-wrap">
+                  <span class="field__icon">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <rect x="3" y="11" width="18" height="11" rx="2" />
+                      <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>
+                  </span>
+                  <input
+                    type="password"
+                    id="pwd-confirm"
+                    class="field__input"
+                    placeholder="••••••••"
+                  />
+                  <button type="button" class="field__eye">
+                    <svg
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel-card__footer">
+              <button class="btn-primary" id="pwd-save-btn" data-label="შეცვლა">
+                შეცვლა
+              </button>
+            </div>
+          </section>
+
+          <!-- DELETE ACCOUNT PANEL -->
+          <section
+            class="panel-card panel-card--danger"
+            id="panel-delete"
+            style="display: none"
+          >
+            <div class="panel-card__header">
+              <h2 class="panel-card__title panel-card__title--danger">
+                ანგარიშის წაშლა
+              </h2>
+              <p class="panel-card__subtitle">
+                ეს მოქმედება შეუქცევადია. ყველა თქვენი მონაცემი სამუდამოდ
+                წაიშლება.
+              </p>
+            </div>
+
+            <div id="del-alert" class="alert" style="display: none"></div>
+
+            <div class="danger-warning">
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              <p>ანგარიშის წაშლის შემდეგ აღდგენა შეუძლებელია.</p>
+            </div>
+
+            <div class="panel-card__footer">
+              <button
+                class="btn-danger"
+                id="del-btn"
+                data-label="ანგარიშის წაშლა"
+              >
+                ანგარიშის წაშლა
+              </button>
+            </div>
+          </section>
+        </div>
+        <!-- /profile-panels -->
+      </div>
+      <!-- /profile-layout -->
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <div class="footer-logo-row">
+            <span class="footer-logo-text">Georgian Flavors</span>
+          </div>
+          <span class="footer-tagline">გემო, ისტორია, სიყვარული</span>
+        </div>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Facebook">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+              />
+            </svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="api.js"></script>
+    <script src="profile.js"></script>
+  </body>
+</html>

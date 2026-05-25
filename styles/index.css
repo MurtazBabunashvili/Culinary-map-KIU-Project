@@ -254,7 +254,7 @@ a {
   width: 100%;
   height: auto;
   aspect-ratio: 1672 / 701;
-  background-image: url("images/main/cover.png");
+  background-image: url("../pages/images/main/cover.png");
   background-size: 100% auto;
   background-position: center top;
   background-repeat: no-repeat;
@@ -301,7 +301,7 @@ a {
   left: 0;
   width: 92%;
   height: 100%;
-  background-image: url("images/main/background.png");
+  background-image: url("../pages/images/main/background.png");
   background-size: 100% auto;
   background-position: center;
   background-repeat: no-repeat;

@@ -6,7 +6,7 @@ const {
   updateRestaurantById,
   deleteRestaurantById,
 } = require("./restaurant.service.js");
-const { isAdmin } = require("../../middleware/isAdmin.middleware.js");
+const isAdmin = require("../../middleware/isAdmin.middleware.js");
 
 const restaurantRouter = Router();
 
