@@ -1,53 +1,39 @@
-/* register.css */
-
-/* Variables */
-:root {
-  /* Palette */
-  --wine-900:   #1E0409;
-  --wine-800:   #2D0710;
-  --wine-700:   #4A0D1A;
-  --wine-600:   #6B0F1A;
-  --wine-500:   #7A1C2E;
-  --wine-400:   #9B2C42;
-  --gold-light: #E8D5A3;
-  --gold-muted: #C4A882;
-  --cream-100:  #FAF6F0;
-  --cream-200:  #F3EBE0;
-  --cream-300:  #E8DCCB;
-  --text-dark:  #2C1810;
-  --text-mid:   #5C3D35;
-  --text-light: #8C6B5C;
-  --border:     #D4C4B0;
-
-  /* Typography */
-  --font-serif:    'Playfair Display', 'Georgia', serif;
-  --font-display:  'Cormorant Garamond', 'Georgia', serif;
-  --font-georgian: 'Noto Serif Georgian', serif;
-
-  /* Transitions */
-  --ease: 0.22s ease;
-}
+@import url(config.css);
 
 /* Reset / Base */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html, body {
+html,
+body {
   height: 100%;
   min-height: 100vh;
 }
 
 body {
   display: flex;
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   background: var(--wine-900);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
   overflow-y: auto;
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
-button { cursor: pointer; border: none; background: none; font-family: inherit; }
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
 
 /* LEFT PANEL */
 .panel {
@@ -75,14 +61,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .panel__overlay {
   position: absolute;
   inset: 0;
-  background:
-    linear-gradient(
-      165deg,
-      rgba(30, 4, 9, 0.88) 0%,
-      rgba(45, 7, 16, 0.72) 40%,
-      rgba(107, 15, 26, 0.55) 70%,
-      rgba(30, 4, 9, 0.90) 100%
-    );
+  background: linear-gradient(
+    165deg,
+    rgba(30, 4, 9, 0.88) 0%,
+    rgba(45, 7, 16, 0.72) 40%,
+    rgba(107, 15, 26, 0.55) 70%,
+    rgba(30, 4, 9, 0.9) 100%
+  );
 }
 
 .panel__content {
@@ -121,15 +106,19 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 .logo__line1,
 .logo__line2 {
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-weight: 400;
   letter-spacing: 0.18em;
   color: var(--gold-light);
   line-height: 1.2;
 }
 
-.logo__line1 { font-size: 0.72rem; }
-.logo__line2 { font-size: 0.68rem; }
+.logo__line1 {
+  font-size: 0.72rem;
+}
+.logo__line2 {
+  font-size: 0.68rem;
+}
 
 /* Hero Text */
 .hero-text {
@@ -155,7 +144,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .divider-line {
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold-muted) 40%, var(--gold-muted) 60%, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--gold-muted) 40%,
+    var(--gold-muted) 60%,
+    transparent
+  );
   opacity: 0.5;
 }
 
@@ -172,7 +167,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-title__small {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 2.15rem;
   font-weight: 300;
   font-style: italic;
@@ -181,7 +176,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-title__large {
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 5.2rem;
   font-weight: 700;
   color: var(--gold-light);
@@ -191,7 +186,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-georgian {
-  font-family: var(--font-georgian);
+  font-family: var(--ff-georgian);
   font-size: 0.9rem;
   font-weight: 300;
   color: var(--gold-muted);
@@ -201,7 +196,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .hero-desc {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 1.05rem;
   font-weight: 300;
   color: var(--gold-light);
@@ -215,7 +210,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 0.6rem;
-  background: rgba(255,255,255, 0.06);
+  background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(232, 213, 163, 0.12);
   border-radius: 14px;
   padding: 1.4rem 1rem;
@@ -232,7 +227,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   border-right: 1px solid rgba(232, 213, 163, 0.12);
 }
 
-.feature:last-child { border-right: none; }
+.feature:last-child {
+  border-right: none;
+}
 
 .feature__icon {
   width: 36px;
@@ -247,7 +244,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .feature__title {
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--gold-light);
@@ -255,7 +252,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .feature__desc {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.76rem;
   font-weight: 300;
   color: var(--gold-muted);
@@ -287,10 +284,14 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* Subtle radial vignette on cream panel */
 .panel--right::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 90% at 50% 50%, transparent 50%, rgba(196, 168, 130, 0.12) 100%);
+  background: radial-gradient(
+    ellipse 80% 90% at 50% 50%,
+    transparent 50%,
+    rgba(196, 168, 130, 0.12) 100%
+  );
   pointer-events: none;
 }
 
@@ -332,7 +333,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .form-heading__title {
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 2.8rem;
   font-weight: 700;
   color: var(--wine-700);
@@ -341,7 +342,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .form-heading__subtitle {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 1rem;
   font-weight: 300;
   color: var(--text-mid);
@@ -350,7 +351,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 .form-heading__georgian {
-  font-family: var(--font-georgian);
+  font-family: var(--ff-georgian);
   font-size: 0.72rem;
   font-weight: 300;
   color: var(--wine-500);
@@ -394,7 +395,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1rem;
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-light);
@@ -403,7 +404,9 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   transition: color var(--ease);
 }
 
-.tab:hover { color: var(--wine-600); }
+.tab:hover {
+  color: var(--wine-600);
+}
 
 .tab--active {
   color: var(--wine-700);
@@ -488,7 +491,7 @@ body:has(#register:target) .tab--login {
 }
 
 .field__label {
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 0.82rem;
   font-weight: 600;
   color: var(--text-dark);
@@ -521,17 +524,20 @@ body:has(#register:target) .tab--login {
   padding: 0.72rem 2.8rem 0.72rem 2.6rem;
   border: 1.5px solid var(--border);
   border-radius: 8px;
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.95rem;
   font-weight: 300;
   color: var(--text-dark);
   background: var(--cream-100);
   outline: none;
-  transition: border-color var(--ease), box-shadow var(--ease), background var(--ease);
+  transition:
+    border-color var(--ease),
+    box-shadow var(--ease),
+    background var(--ease);
 }
 
 .field__input::placeholder {
-  color: #B8A999;
+  color: #b8a999;
   font-style: italic;
 }
 
@@ -553,7 +559,9 @@ body:has(#register:target) .tab--login {
   transition: color var(--ease);
 }
 
-.field__eye:hover { color: var(--wine-500); }
+.field__eye:hover {
+  color: var(--wine-500);
+}
 
 .field__eye svg {
   width: 100%;
@@ -585,7 +593,7 @@ body:has(#register:target) .tab--login {
   resize: vertical;
   min-height: 90px;
   line-height: 1.6;
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.95rem;
   font-weight: 300;
 }
@@ -617,7 +625,9 @@ body:has(#register:target) .tab--login {
   border-radius: 4px;
   background: var(--cream-100);
   margin-top: 1px;
-  transition: border-color var(--ease), background var(--ease);
+  transition:
+    border-color var(--ease),
+    background var(--ease);
   position: relative;
   display: flex;
   align-items: center;
@@ -630,7 +640,7 @@ body:has(#register:target) .tab--login {
 }
 
 .checkbox-input:checked + .checkbox-box::after {
-  content: '';
+  content: "";
   width: 4px;
   height: 8px;
   border: 2px solid #fff;
@@ -641,7 +651,7 @@ body:has(#register:target) .tab--login {
 }
 
 .checkbox-text {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.88rem;
   font-weight: 300;
   color: var(--text-mid);
@@ -654,12 +664,15 @@ body:has(#register:target) .tab--login {
   padding: 0.85rem 1.5rem;
   background: var(--wine-700);
   color: var(--gold-light);
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   border-radius: 8px;
-  transition: background var(--ease), transform 0.12s ease, box-shadow var(--ease);
+  transition:
+    background var(--ease),
+    transform 0.12s ease,
+    box-shadow var(--ease);
   box-shadow: 0 4px 16px rgba(107, 15, 26, 0.25);
 }
 
@@ -689,7 +702,7 @@ body:has(#register:target) .tab--login {
 }
 
 .divider__text {
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.82rem;
   color: var(--text-light);
 }
@@ -705,11 +718,14 @@ body:has(#register:target) .tab--login {
   border: 1.5px solid var(--border);
   border-radius: 8px;
   background: #fff;
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.95rem;
   font-weight: 400;
   color: var(--text-dark);
-  transition: border-color var(--ease), background var(--ease), box-shadow var(--ease);
+  transition:
+    border-color var(--ease),
+    background var(--ease),
+    box-shadow var(--ease);
 }
 
 .btn-social:hover {
@@ -731,12 +747,14 @@ body:has(#register:target) .tab--login {
   transition: color var(--ease);
 }
 
-.link:hover { color: var(--wine-400); }
+.link:hover {
+  color: var(--wine-400);
+}
 
 /* Form Footer */
 .form-footer {
   margin-top: 1.1rem;
-  font-family: var(--font-display);
+  font-family: var(--ff-cormorant);
   font-size: 0.88rem;
   font-weight: 300;
   color: var(--text-light);
@@ -746,14 +764,18 @@ body:has(#register:target) .tab--login {
 .link--bold {
   color: var(--wine-600);
   font-weight: 600;
-  font-family: var(--font-serif);
+  font-family: var(--ff-display);
 }
 
-.link--bold:hover { color: var(--wine-400); }
+.link--bold:hover {
+  color: var(--wine-400);
+}
 
 /* RESPONSIVE */
 @media (max-width: 900px) {
-  body { flex-direction: column; }
+  body {
+    flex-direction: column;
+  }
 
   .panel--left {
     flex: none;
@@ -765,8 +787,12 @@ body:has(#register:target) .tab--login {
     padding: 1.8rem 2rem 1.5rem;
   }
 
-  .hero-title__large { font-size: 3.8rem; }
-  .hero-title__small { font-size: 1.6rem; }
+  .hero-title__large {
+    font-size: 3.8rem;
+  }
+  .hero-title__small {
+    font-size: 1.6rem;
+  }
 
   .features {
     grid-template-columns: repeat(3, 1fr);
@@ -782,7 +808,9 @@ body:has(#register:target) .tab--login {
 }
 
 @media (max-width: 560px) {
-  .panel--left { height: 55vw; }
+  .panel--left {
+    height: 55vw;
+  }
 
   .field-row {
     grid-template-columns: 1fr;
@@ -793,12 +821,23 @@ body:has(#register:target) .tab--login {
     gap: 0.6rem;
   }
 
-  .feature { border-right: none; border-bottom: 1px solid rgba(232, 213, 163, 0.12); }
-  .feature:last-child { border-bottom: none; }
+  .feature {
+    border-right: none;
+    border-bottom: 1px solid rgba(232, 213, 163, 0.12);
+  }
+  .feature:last-child {
+    border-bottom: none;
+  }
 
-  .form-card { padding: 1.4rem 1.2rem 1.6rem; }
+  .form-card {
+    padding: 1.4rem 1.2rem 1.6rem;
+  }
 
-  .form-heading__title { font-size: 2.2rem; }
+  .form-heading__title {
+    font-size: 2.2rem;
+  }
 
-  .hero-title__large { font-size: 2.8rem; }
+  .hero-title__large {
+    font-size: 2.8rem;
+  }
 }
