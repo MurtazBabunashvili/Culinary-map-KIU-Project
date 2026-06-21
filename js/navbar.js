@@ -13,7 +13,7 @@ function applyClosedState(nav, button, lines) {
 function applyOpenState(nav, button, lines) {
   nav.style.display = "flex";
   nav.style.position = "absolute";
-  nav.style.top = "66px";
+  nav.style.top = "78px";
   nav.style.left = "0";
   nav.style.right = "0";
   nav.style.width = "100%";
@@ -163,5 +163,71 @@ function initNavbarToggle() {
   window.addEventListener("resize", close);
   close();
 }
+
+const HERO_AFTER_HEADER =
+  ".hero, .foods-hero, .rest-hero, .region-hero";
+
+const hasPhotoHero = (header) => {
+  const next = header.nextElementSibling;
+  return next?.matches(HERO_AFTER_HEADER) ?? false;
+};
+
+const initScrollEffects = () => {
+  const header = document.querySelector(".site-header");
+  if (!header) return;
+
+  const photoHero = hasPhotoHero(header);
+
+  const bar = document.createElement("div");
+  bar.id = "scroll-progress";
+  Object.assign(bar.style, {
+    position: "fixed",
+    top: "0",
+    left: "0",
+    height: "3px",
+    width: "0%",
+    background: "linear-gradient(90deg, #c9a84c, #e2c97e, #bfa07a)",
+    zIndex: "1001",
+    opacity: "0",
+    transition: "opacity 0.4s ease",
+    pointerEvents: "none",
+  });
+  document.body.appendChild(bar);
+
+  let lastScrollY = 0;
+  let ticking = false;
+
+  const updateHeader = (scrollY) => {
+    if (!photoHero) return;
+    header.classList.toggle("is-at-top", scrollY <= 10);
+  };
+
+  const onScroll = () => {
+    lastScrollY = window.scrollY;
+    if (!ticking) {
+      requestAnimationFrame(() => {
+        const docHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const progress = docHeight > 0 ? (lastScrollY / docHeight) * 100 : 0;
+
+        if (lastScrollY > 50) {
+          bar.style.width = `${progress}%`;
+          bar.style.opacity = "1";
+        } else {
+          bar.style.opacity = "0";
+        }
+
+        updateHeader(lastScrollY);
+        ticking = false;
+      });
+      ticking = true;
+    }
+  };
+
+  updateHeader(window.scrollY);
+  window.addEventListener("scroll", onScroll, { passive: true });
+};
+
+document.addEventListener("DOMContentLoaded", initScrollEffects);
 
 document.addEventListener("DOMContentLoaded", initNavbarToggle);
