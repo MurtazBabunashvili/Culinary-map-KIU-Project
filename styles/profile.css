@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Nunito:wght@300;400;600;700&display=swap");
-@import url(config.css);
+@import url("config.css");
 
-/* ── Reset & Base ─────────────────────────────────────────────────────── */
+/* Reset & base */
 *,
 *::before,
 *::after {
@@ -38,7 +38,7 @@ button {
   font-family: inherit;
 }
 
-/* ── SITE HEADER (shared across site) ────────────────────────────────── */
+/* Site header */
 .site-header {
   background: var(--maroon-deep);
   position: fixed;
@@ -175,7 +175,7 @@ button {
   background: var(--white);
 }
 
-/* ── PROFILE HERO ─────────────────────────────────────────────────────── */
+/* Profile hero */
 .profile-hero {
   position: relative;
   min-height: 280px;
@@ -273,7 +273,7 @@ button {
   opacity: 0.7;
 }
 
-/* ── MAIN LAYOUT ──────────────────────────────────────────────────────── */
+/* Main layout */
 .profile-main {
   background: var(--cream);
   padding: 2.5rem 2.5rem 4rem;
@@ -287,7 +287,7 @@ button {
   align-items: start;
 }
 
-/* ── SIDEBAR NAV ──────────────────────────────────────────────────────── */
+/* Sidebar nav */
 .profile-sidebar {
   position: sticky;
   top: 90px;
@@ -373,7 +373,7 @@ button {
   background: var(--cream-light);
 }
 
-/* ── PANEL CARDS ──────────────────────────────────────────────────────── */
+/* Panel cards */
 .panel-card {
   background: var(--cream-white);
   border: 1px solid var(--cream-dark);
@@ -508,7 +508,7 @@ button {
   border-top: 1px solid var(--cream-dark);
 }
 
-/* ── BUTTONS ──────────────────────────────────────────────────────────── */
+/* Buttons */
 .btn-primary {
   display: inline-block;
   padding: 0.82rem 2.2rem;
@@ -568,7 +568,7 @@ button {
   transform: none;
 }
 
-/* ── ALERTS ───────────────────────────────────────────────────────────── */
+/* Alerts */
 .alert {
   margin: 1rem 2rem 0;
   padding: 0.65rem 1rem;
@@ -587,7 +587,7 @@ button {
   border: 1px solid #a8ddc8;
 }
 
-/* ── DANGER WARNING BOX ───────────────────────────────────────────────── */
+/* Danger warning */
 .danger-warning {
   margin: 1.5rem 2rem;
   padding: 1rem 1.25rem;
@@ -609,7 +609,7 @@ button {
   color: #8b2635;
 }
 
-/* ── FOOTER (shared) ─────────────────────────────────────────────────── */
+/* Footer */
 .site-footer {
   background: var(--maroon-deep);
   border-top: 2px solid var(--maroon-mid);
@@ -670,7 +670,7 @@ button {
   color: var(--maroon-deep);
 }
 
-/* ── RESPONSIVE ───────────────────────────────────────────────────────── */
+/* Responsive */
 @media (max-width: 860px) {
   .profile-layout {
     grid-template-columns: 1fr;

@@ -1,14 +1,12 @@
-/* config.css — Global Design Tokens */
-
 :root {
-  /* ── Colors: Maroon scale ─────────────────────────────── */
+  /* Maroon */
   --maroon-deep: #3a0a0a;
   --maroon: #5c1a1a;
   --maroon-mid: #7b2828;
   --maroon-light: #922f2f;
   --red-accent: #8b2635;
 
-  /* ── Colors: Wine scale (register page) ──────────────── */
+  /* Wine (register) */
   --wine-900: #1e0409;
   --wine-800: #2d0710;
   --wine-700: #4a0d1a;
@@ -16,7 +14,7 @@
   --wine-500: #7a1c2e;
   --wine-400: #9b2c42;
 
-  /* ── Colors: Tan / Cream ─────────────────────────────── */
+  /* Tan & cream */
   --tan-dark: #8b6b4a;
   --tan: #bfa07a;
   --tan-light: #d4bc9a;
@@ -25,17 +23,17 @@
   --cream-light: #faf4ec;
   --cream-white: #fdfaf6;
 
-  /* ── Colors: Register cream scale ────────────────────── */
+  /* Register cream */
   --cream-100: #faf6f0;
   --cream-200: #f3ebe0;
   --cream-300: #e8dccb;
 
-  /* ── Colors: Gold ────────────────────────────────────── */
+  /* Gold */
   --gold: #c9a84c;
   --gold-light: #e2c97e;
   --gold-muted: #c4a882;
 
-  /* ── Colors: Text ────────────────────────────────────── */
+  /* Text */
   --text-dark: #280606;
   --text-mid: #3d1515;
   --text-body: #4a2c2c;
@@ -44,45 +42,45 @@
   --border: #d4c4b0;
   --white: #ffffff;
 
-  /* ── Colors: Region accent (Samegrelo teal) ──────────── */
+  /* Region accent */
   --region-accent: #2d6a5b;
   --region-mid: #3d8a76;
   --region-light: #4f9e88;
   --region-pale: #d4ede8;
 
-  /* ── Colors: Category accents (foods page) ───────────── */
+  /* Food category accents */
   --c-puri: #7b4a1a;
   --c-khorci: #5c1a1a;
   --c-bostneuli: #2d6a5b;
   --c-desert: #7a4f1a;
   --c-soup: #4a5e8a;
 
-  /* ── Colors: City accents (restaurants page) ─────────── */
+  /* City accents */
   --c-tbilisi: #5c1a1a;
   --c-kutaisi: #2d6a5b;
   --c-samegrelo: #4a5e8a;
   --c-kakheti: #7a4f1a;
 
-  /* ── Colors: Glass effect ────────────────────────────── */
+  /* Glass */
   --glass-bg: rgba(253, 250, 246, 0.75);
   --glass-border: rgba(255, 255, 255, 0.5);
 
-  /* ── Typography ──────────────────────────────────────── */
+  /* Typography */
   --ff-display: "Playfair Display", Georgia, serif;
   --ff-body: "Crimson Pro", Georgia, serif;
   --ff-ui: "Nunito", system-ui, sans-serif;
   --ff-georgian: "Noto Serif Georgian", serif;
   --ff-cormorant: "Cormorant Garamond", Georgia, serif;
 
-  /* ── Shadows ─────────────────────────────────────────── */
+  /* Shadows */
   --shadow-sm: 0 2px 10px rgba(58, 10, 10, 0.09);
   --shadow-md: 0 5px 24px rgba(58, 10, 10, 0.16);
   --shadow-lg: 0 10px 48px rgba(58, 10, 10, 0.24);
 
-  /* ── Borders & Radius ────────────────────────────────── */
+  /* Radius */
   --radius: 12px;
 
-  /* ── Easing ──────────────────────────────────────────── */
+  /* Easing */
   --ease: 0.3s ease;
   --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
