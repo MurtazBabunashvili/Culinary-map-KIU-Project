@@ -169,7 +169,8 @@ const HERO_AFTER_HEADER =
 
 const hasPhotoHero = (header) => {
   const next = header.nextElementSibling;
-  return next?.matches(HERO_AFTER_HEADER) ?? false;
+  const hero = next?.matches("main") ? next.firstElementChild : next;
+  return hero?.matches(HERO_AFTER_HEADER) ?? false;
 };
 
 const initScrollEffects = () => {

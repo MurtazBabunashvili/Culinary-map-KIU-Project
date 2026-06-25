@@ -4,6 +4,17 @@ const getFavorites = () =>
 const saveFavorites = (favs) =>
   localStorage.setItem("favorites", JSON.stringify(favs));
 
+const recipeSlugs = {
+  "ხინკალი": "khinkali",
+  "ხაჭაპური": "khachapuri",
+  "ელარჯი": "elarji",
+  "ლობიო": "lobio",
+  "მწვადი": "mtsvadi",
+  "კუბდარი": "kubdari",
+  "ჩაშუშული": "chashushuli",
+  "ხარჩო": "kharcho",
+};
+
 const toggleFavorite = (foodName) => {
   const favs = getFavorites();
   const isInFav = favs.includes(foodName);
@@ -70,6 +81,22 @@ const addHeartButtons = () => {
       imgWrap.style.position = "relative";
       imgWrap.appendChild(btn);
     }
+  });
+};
+
+const addRecipeLinks = () => {
+  document.querySelectorAll(".fcard").forEach((card) => {
+    const foodName = card.querySelector(".fcard__name")?.textContent.trim();
+    const slug = recipeSlugs[foodName];
+    const footer = card.querySelector(".fcard__footer");
+
+    if (!slug || !footer || footer.querySelector(".fcard__recipe")) return;
+
+    const link = document.createElement("a");
+    link.className = "fcard__recipe";
+    link.href = `recipe.html?dish=${slug}`;
+    link.textContent = "რეცეპტი →";
+    footer.appendChild(link);
   });
 };
 
@@ -216,5 +243,6 @@ const updateResultsBar = (count, query) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   addHeartButtons();
+  addRecipeLinks();
   buildSearchBar();
 });

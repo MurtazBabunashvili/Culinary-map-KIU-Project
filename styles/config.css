@@ -101,7 +101,10 @@
 .site-header + .hero,
 .site-header + .foods-hero,
 .site-header + .rest-hero,
-.site-header + .region-hero {
+.site-header + .region-hero,
+.site-header + main .hero,
+.site-header + main .foods-hero,
+.site-header + main .rest-hero {
   margin-top: -78px;
 }
 
@@ -163,4 +166,13 @@ header.site-header.is-at-top .nav-burger {
 
 header.site-header.is-at-top .nav-burger__line {
   background: var(--nav-at-top-burger);
+}
+
+.session-page-note {
+  margin-top: 0.35rem;
+  font-family: var(--ff-ui);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: rgba(226, 201, 126, 0.7);
 }

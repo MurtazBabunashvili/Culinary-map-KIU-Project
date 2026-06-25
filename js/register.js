@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const registerBtn = document.querySelector("#register .btn-primary");
+  const registerForm = document.getElementById("register");
 
-  if (registerBtn) {
-    registerBtn.addEventListener("click", () => {
+  if (registerForm) {
+    registerForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
       const firstName =
         document.getElementById("firstname")?.value.trim() || "";
       const lastName = document.getElementById("lastname")?.value.trim() || "";
@@ -44,10 +46,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const loginBtn = document.querySelector("#login .btn-primary");
+  const loginForm = document.getElementById("login");
 
-  if (loginBtn) {
-    loginBtn.addEventListener("click", () => {
+  if (loginForm) {
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
       const email = document.getElementById("login-email")?.value.trim() || "";
       const password = document.getElementById("login-password")?.value || "";
 

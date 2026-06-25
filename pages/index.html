@@ -40,17 +40,21 @@
       </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero">
+    <main>
+      <!-- Hero -->
+      <section class="hero">
       <div class="hero-bg"></div>
       <div class="hero-overlay"></div>
+      <div id="weather-widget" class="weather-widget" aria-live="polite">
+        <p class="weather-loading">ამინდი იტვირთება…</p>
+      </div>
       <a href="#map" class="hero-scroll-button" aria-label="ჩამოსვლა რუკაზე">
         ↓
       </a>
     </section>
 
-    <!-- Map -->
-    <section class="map-section" id="map">
+      <!-- Map -->
+      <section class="map-section" id="map">
       <div class="map-container">
         <h2 class="map-section-title">ამოირჩიე კუთხე</h2>
         <div class="map-wrapper map-wrapper--georgia">
@@ -976,6 +980,8 @@
       </div>
     </section>
 
+    </main>
+
     <!-- Footer -->
     <footer class="site-footer">
       <div class="footer-inner">
@@ -1054,7 +1060,6 @@
     </footer>
     <script src="../js/api.js"></script>
     <script src="../js/navbar.js"></script>
-    <script src="../js/utils.js"></script>
     <script src="../js/weather.js"></script>
   </body>
 </html>

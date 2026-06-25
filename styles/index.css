@@ -242,6 +242,95 @@ header.site-header.is-at-top .logo-line2 {
   display: none;
 }
 
+.weather-widget {
+  position: absolute;
+  left: 2.5rem;
+  bottom: 2.6rem;
+  z-index: 3;
+  width: min(320px, calc(100% - 5rem));
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(226, 201, 126, 0.38);
+  border-radius: 18px;
+  background: rgba(58, 10, 10, 0.72);
+  color: var(--cream-light);
+  box-shadow: 0 18px 40px rgba(30, 4, 9, 0.28);
+  backdrop-filter: blur(12px);
+}
+
+.weather-city {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--ff-ui);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+.weather-icon {
+  flex-shrink: 0;
+}
+
+.weather-temp {
+  margin-top: 0.55rem;
+  font-family: var(--ff-display);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--white);
+}
+
+.weather-desc {
+  margin-top: 0.35rem;
+  font-family: var(--ff-body);
+  font-size: 1rem;
+  color: var(--cream);
+}
+
+.weather-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 0.8rem;
+  font-family: var(--ff-ui);
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.weather-wind {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.weather-badge {
+  padding: 0.18rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(226, 201, 126, 0.18);
+  color: var(--gold-light);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.weather-subtitle {
+  margin: 0.7rem 0 0;
+  font-family: var(--ff-ui);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.weather-loading,
+.weather-error {
+  margin: 0;
+  font-family: var(--ff-ui);
+  font-size: 0.9rem;
+  color: var(--cream-light);
+}
+
 .hero-scroll-button {
   position: absolute;
   left: 50%;
@@ -1542,6 +1631,13 @@ header.site-header.is-at-top .logo-line2 {
   .hero-bg {
     background-size: auto 100%;
     background-position: center top;
+  }
+
+  .weather-widget {
+    left: 50%;
+    bottom: 6.4rem;
+    width: min(330px, calc(100% - 2rem));
+    transform: translateX(-50%);
   }
 
   .hero-scroll-button {

@@ -91,6 +91,22 @@
               </svg>
               <span>პირადი ინფო</span>
             </button>
+            <button class="profile-nav__item" data-tab="favorites">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              <span>რჩეულები</span>
+              <span class="profile-nav__badge" id="favorites-nav-count">0</span>
+            </button>
             <button class="profile-nav__item" data-tab="password">
               <svg
                 width="18"
@@ -270,6 +286,49 @@
               >
                 შენახვა
               </button>
+            </div>
+          </section>
+
+          <!-- Favorites -->
+          <section class="panel-card" id="panel-favorites" style="display: none">
+            <div class="panel-card__header">
+              <h2 class="panel-card__title">რჩეული კერძები</h2>
+              <p class="panel-card__subtitle" id="favorites-summary">
+                თქვენი შენახული კერძები გამოჩნდება აქ
+              </p>
+            </div>
+
+            <div class="favorites-stats" id="favorites-stats">
+              <div class="favorites-stat">
+                <span class="favorites-stat__value" id="favorites-total">0</span>
+                <span class="favorites-stat__label">რჩეული კერძი</span>
+              </div>
+              <div class="favorites-stat">
+                <span class="favorites-stat__value" id="favorites-top-region">—</span>
+                <span class="favorites-stat__label">ყველაზე ხშირი რეგიონი</span>
+              </div>
+            </div>
+
+            <div class="favorites-grid" id="favorites-grid"></div>
+
+            <div class="favorites-empty" id="favorites-empty" style="display: none">
+              <div class="favorites-empty__icon">
+                <svg
+                  width="34"
+                  height="34"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"
+                  />
+                </svg>
+              </div>
+              <h3>რჩეული კერძები ჯერ არ გაქვთ</h3>
+              <p>გადადით კერძების გვერდზე და შეინახეთ კერძები გულის ღილაკით.</p>
+              <a href="foods.html" class="favorites-empty__cta">კერძების ნახვა</a>
             </div>
           </section>
 
@@ -525,7 +584,6 @@
 
     <script src="../js/api.js"></script>
     <script src="../js/navbar.js"></script>
-    <script src="../js/utils.js"></script>
     <script src="../js/profile.js"></script>
   </body>
 </html>

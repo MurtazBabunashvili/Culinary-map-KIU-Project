@@ -690,6 +690,26 @@ a {
   flex-shrink: 0;
 }
 
+.fcard__recipe {
+  margin-left: 0.55rem;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: var(--maroon);
+  color: var(--gold-light);
+  font-family: var(--ff-ui);
+  font-size: 0.7rem;
+  font-weight: 800;
+  white-space: nowrap;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.fcard__recipe:hover {
+  background: var(--maroon-light);
+  transform: translateY(-1px);
+}
+
 /* FEATURED BANNER (middle of grid — full-width callout) */
 .food-feature-banner {
   max-width: 1440px;
@@ -989,6 +1009,12 @@ a {
   }
 }
 @media (max-width: 420px) {
+  .fcard__footer {
+    flex-wrap: wrap;
+  }
+  .fcard__recipe {
+    margin-left: 0;
+  }
   .hstat-sep {
     display: none;
   }
