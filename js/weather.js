@@ -34,6 +34,66 @@ const windIcon = `
   </svg>
 `;
 
+const weatherOpenIcon = `
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+       stroke="currentColor" stroke-width="2" aria-hidden="true">
+    <path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </svg>
+`;
+
+function ensureWeatherControls() {
+  const widget = document.getElementById("weather-widget");
+  if (!widget) return null;
+
+  let openBtn = document.getElementById("weather-open-btn");
+  if (!openBtn) {
+    openBtn = document.createElement("button");
+    openBtn.id = "weather-open-btn";
+    openBtn.className = "weather-open-btn";
+    openBtn.type = "button";
+    openBtn.hidden = true;
+    openBtn.setAttribute("aria-label", "ამინდის ბარათის გახსნა");
+    openBtn.innerHTML = weatherOpenIcon;
+    document.body.appendChild(openBtn);
+  }
+
+  openBtn.onclick = () => {
+    widget.hidden = false;
+    openBtn.hidden = true;
+  };
+
+  return { widget, openBtn };
+}
+
+function addWeatherCloseButton() {
+  const controls = ensureWeatherControls();
+  if (!controls) return;
+
+  const { widget, openBtn } = controls;
+  if (widget.querySelector(".weather-close")) return;
+
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "weather-close";
+  closeBtn.type = "button";
+  closeBtn.setAttribute("aria-label", "ამინდის ბარათის დახურვა");
+  closeBtn.textContent = "×";
+  closeBtn.addEventListener("click", () => {
+    widget.hidden = true;
+    openBtn.hidden = false;
+  });
+
+  widget.prepend(closeBtn);
+}
+
+function setWeatherMessage(className, message) {
+  const widget = document.getElementById("weather-widget");
+  if (!widget) return;
+
+  widget.innerHTML = `<p class="${className}">${message}</p>`;
+  addWeatherCloseButton();
+}
+
 function fetchWeatherCallback(callback) {
   fetch(WEATHER_URL)
     .then((res) => {
@@ -76,7 +136,7 @@ function renderWeatherWidget(weather) {
   if (!widget) return;
 
   if (!weather) {
-    widget.innerHTML = `<p class="weather-error">ამინდის მონაცემები მიუწვდომელია.</p>`;
+    setWeatherMessage("weather-error", "ამინდის მონაცემები მიუწვდომელია.");
     return;
   }
 
@@ -97,16 +157,18 @@ function renderWeatherWidget(weather) {
         <span class="weather-wind">${windIcon} ${wind} მ/წმ</span>
         <span class="weather-badge">live</span>
       </div>
-      <p class="weather-subtitle">დღის ამინდი — გასეირნებისა და რესტორნის არჩევისთვის</p>
+      <p class="weather-subtitle">დღის ამინდი — სეირნობისთვისა და რესტორნის არჩევისთვის</p>
     </div>
   `;
+  addWeatherCloseButton();
 }
 
 async function loadKutaisiWeather() {
   const widget = document.getElementById("weather-widget");
   if (!widget) return;
 
-  widget.innerHTML = `<p class="weather-loading">ამინდი იტვირთება…</p>`;
+  ensureWeatherControls();
+  setWeatherMessage("weather-loading", "ამინდი იტვირთება…");
 
   const weatherAsync = await fetchWeatherAsync();
   if (weatherAsync) {
@@ -122,7 +184,7 @@ async function loadKutaisiWeather() {
 
   fetchWeatherCallback((err, weatherCb) => {
     if (err || !weatherCb) {
-      widget.innerHTML = `<p class="weather-error">ამინდის მონაცემები მიუწვდომელია.</p>`;
+      setWeatherMessage("weather-error", "ამინდის მონაცემები მიუწვდომელია.");
       return;
     }
     renderWeatherWidget(weatherCb);
